@@ -1,4 +1,3 @@
-import PromoElementComponent from "./components/PromoElement";
 import PromoElementsContainer from "./components/PromoElementsContainer";
 
 function App() {
