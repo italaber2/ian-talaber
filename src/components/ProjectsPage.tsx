@@ -1,7 +1,9 @@
+import ProjectElementsContainer from "./ProjectElementsContainer";
+
 function ProjectsPage() {
   return (
-    <div className="App">
-      <header data-testid="projects-page-header" className="App-header">
+    <div className="projects-page">
+      <header className="projects-page-header">
         <h1>Projects</h1>
         <p>
           All of a sudden go crazy cat snacks chase imaginary bugs chase mice
@@ -9,6 +11,9 @@ function ProjectsPage() {
           interesting.
         </p>
       </header>
+      <div>
+        <ProjectElementsContainer />
+      </div>
     </div>
   );
 }

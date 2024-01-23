@@ -1,7 +1,7 @@
 function SkillsPage() {
   return (
-    <div className="App">
-      <header data-testid="skills-page-header" className="App-header">
+    <div className="skills-page">
+      <header className="skills-page-header">
         <h1>Skills</h1>
         <p>
           All of a sudden go crazy cat snacks chase imaginary bugs chase mice

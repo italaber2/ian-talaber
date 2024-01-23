@@ -3,7 +3,7 @@ import { Link, Route, Switch } from "wouter";
 import App from "../App";
 import ProjectsPage from "./ProjectsPage";
 import SkillsPage from "./SkillsPage";
-// import "../style/Navigation.css";
+import "../style/Navigation.css";
 
 function AppRouter() {
   return (

@@ -1,11 +1,11 @@
-interface PromoElementProps {
+interface ProjectElementProps {
   headline: string;
   text: string;
   imageUrl: string;
   altText: string;
 }
 
-const PromoElement: React.FC<PromoElementProps> = ({
+const ProjectElement: React.FC<ProjectElementProps> = ({
   headline,
   text,
   imageUrl,
@@ -20,4 +20,4 @@ const PromoElement: React.FC<PromoElementProps> = ({
   );
 };
 
-export default PromoElement;
+export default ProjectElement;
