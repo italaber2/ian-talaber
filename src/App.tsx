@@ -1,16 +1,14 @@
-import PromoElementsContainer from "./components/PromoElementsContainer";
+import PromoElementsContainer from "./components/overview_page/promoElementsContainer";
+import HeaderElement from "./components/header/headerElement";
+import headerText from "./data/headerText.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 data-testid="app-title">A Very Clever Page Title</h1>
-        <p data-testid="copy-text">
-          All of a sudden go crazy cat snacks chase imaginary bugs chase mice
-          chew foot claw drapes destroy couch find something else more
-          interesting.
-        </p>
-      </header>
+      <HeaderElement
+        headline={headerText.overviewHeadline}
+        copyText={headerText.overviewText}
+      />
       <div>
         <PromoElementsContainer />
       </div>

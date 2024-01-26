@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, Route, Switch } from "wouter";
 import App from "../App";
-import ProjectsPage from "./ProjectsPage";
-import SkillsPage from "./SkillsPage";
+import ProjectsPage from "./projects_page/projectsPage";
+import SkillsPage from "./skills_page/skillsPage";
 import "../style/Navigation.css";
 
 function AppRouter() {

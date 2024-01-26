@@ -5,26 +5,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.App {
+.App,
+.projects-page,
+.skills-page {
   text-align: center;
   min-height: 100vh;
 }
 
-.App-header {
+.App-header,
+.projects-page-header,
+.skills-page-header {
   padding: 20px;
   color: white;
-}
-
-.product-list {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.product {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
 }
