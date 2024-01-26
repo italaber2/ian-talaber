@@ -1,5 +1,5 @@
-import HeaderElement from "../header/headerElement";
 import ProjectElementsContainer from "./projectElementsContainer";
+import HeaderElement from "../header/headerElement";
 import headerText from "../../data/headerText.json";
 
 function ProjectsPage() {
