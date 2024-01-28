@@ -1,21 +1,33 @@
-interface PromoElementProps {
-  headline: string;
-  text: string;
+import { jsonData } from "../../data/overview";
+
+interface PromoElementData {
+  id: number;
+  title: string;
+  content: string;
   imageUrl: string;
-  altText: string;
+  imageAltText: string;
 }
 
-const PromoElement: React.FC<PromoElementProps> = ({
-  headline,
-  text,
+const ProjectComponent: React.FC<PromoElementData> = ({
+  id,
+  title,
+  content,
   imageUrl,
-  altText,
-}) => {
+  imageAltText,
+}) => (
+  <div key={id}>
+    <img src={imageUrl} alt={imageAltText} style={{ maxWidth: "25%" }} />
+    <h2>{title}</h2>
+    <p>{content}</p>
+  </div>
+);
+
+const PromoElement: React.FC = () => {
   return (
     <div>
-      <img src={imageUrl} alt={altText} style={{ maxWidth: "25%" }} />
-      <h2>{headline}</h2>
-      <p>{text}</p>
+      {jsonData.map((item: PromoElementData) => (
+        <ProjectComponent key={item.id} {...item} />
+      ))}
     </div>
   );
 };

@@ -1,14 +1,10 @@
 import ProjectElementsContainer from "./projectElementsContainer";
 import HeaderElement from "../header/headerElement";
-import headerText from "../../data/headerText.json";
 
 function ProjectsPage() {
   return (
     <div className="projects-page">
-      <HeaderElement
-        headline={headerText.projectsHeadline}
-        copyText={headerText.projectsText}
-      />
+      <HeaderElement headerId={2} />
       <div>
         <ProjectElementsContainer />
       </div>
