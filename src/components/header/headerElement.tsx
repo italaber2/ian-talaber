@@ -1,4 +1,4 @@
-import { getHeaderDataById } from "../../data/headers";
+import jsonData from "../../data/headers.json";
 
 export interface HeaderContent {
   id: number;
@@ -6,9 +6,15 @@ export interface HeaderContent {
   content: string;
 }
 
+const getHeaderDataById = (id: number) => {
+  const foundItem = jsonData.find((item) => item.id === id);
+
+  return foundItem || null;
+};
+
 const HeaderComponent: React.FC<HeaderContent> = ({ id, title, content }) => (
   <div key={id}>
-    <h2>{title}</h2>
+    <h1>{title}</h1>
     <p>{content}</p>
   </div>
 );

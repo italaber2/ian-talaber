@@ -1,16 +1,18 @@
-.promo-element-skill {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px;
-  text-align: left;
+.promo-component {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-.promo-element-project {
-  border: 1px solid #ccc;
+.promo-element-container {
+  grid-gap: 10px;
+  border: 10px solid #ccc;
+  max-width: 50%;
+}
+
+.promo-element {
+  border: 5px solid #ccc;
   border-radius: 4px;
   padding: 10px;
   margin: 10px;
-  text-align: right;
-  image-orientation: flip;
 }
