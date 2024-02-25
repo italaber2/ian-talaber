@@ -1,13 +1,16 @@
+import React from "react";
 import ProjectElementsContainer from "./projectElementsContainer";
 import HeaderElement from "../header/headerElement";
 
 function ProjectsPage() {
   return (
-    <div className="projects-page">
-      <HeaderElement headerId={2} />
-      <div>
+    <div className="projects">
+      <React.Fragment>
+        <HeaderElement headerId={2} />
+      </React.Fragment>
+      <React.Fragment>
         <ProjectElementsContainer />
-      </div>
+      </React.Fragment>
     </div>
   );
 }

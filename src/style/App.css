@@ -6,52 +6,24 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.App,
-.Header,
-.Promo {
+.app,
+.promo,
+.header-component,
+.project-component {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.App,
-.Promo .projects-page,
-.skills-page {
   text-align: center;
-  min-height: 100vh;
-}
-
-.App-header,
-.projects-page-header,
-.skills-page-header {
-  padding: 20px;
-  color: white;
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.6rem;
-}
-
-h3 {
   font-size: 2rem;
 }
 
-h4 {
-  font-size: 1.44rem;
-}
-
-h5 {
-  font-size: 1.15rem;
-}
-
-h6 {
-  font-size: .96rem;
+h2 {
+  font-size: 1.5rem;
 }
 
 p {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }

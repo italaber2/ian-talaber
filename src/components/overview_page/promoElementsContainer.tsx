@@ -3,9 +3,9 @@ import PromoElement from "./promoElement";
 
 function PromoElementsContainer() {
   return (
-    <div className="promo-element-container">
+    <React.Fragment>
       <PromoElement />
-    </div>
+    </React.Fragment>
   );
 }
 

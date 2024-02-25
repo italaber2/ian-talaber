@@ -1,0 +1,26 @@
+.promo-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.promo-element {
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  min-width: 100 vw;
+}
+
+.promo-image {
+  background-size: cover;
+}
+
+.text-overlay {
+  position: center;
+  top: 0;
+  right: 0;
+  color: red;
+  text-align: center;
+}

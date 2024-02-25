@@ -3,7 +3,9 @@ import HeaderElement from "../header/headerElement";
 function SkillsPage() {
   return (
     <div className="skills-page">
-      <HeaderElement headerId={3} />
+      <div className="header">
+        <HeaderElement headerId={3} />
+      </div>
     </div>
   );
 }

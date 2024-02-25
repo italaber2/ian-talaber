@@ -28,10 +28,18 @@ function PromoComponent({
   };
   return (
     <div className="promo-element" key={id}>
-      <img src={imageUrl} alt={imageAltText} style={{ maxWidth: "25%" }} />
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <button onClick={openPromoElementDetails}>View Project Details</button>
+      <div
+        className="promo-image"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})`,
+        }}
+      >
+        <div className="text-overlay">
+          <h2>{title}</h2>
+          <p>{content}</p>
+          <button onClick={openPromoElementDetails}>More Info</button>
+        </div>
+      </div>
       {layerVisible && (
         <div className="overlay">
           <div className="modal">

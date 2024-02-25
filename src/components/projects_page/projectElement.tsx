@@ -1,3 +1,4 @@
+import React from "react";
 import jsonData from "../../data/projects.json";
 
 interface ProjectData {
@@ -15,16 +16,16 @@ const ProjectComponent: React.FC<ProjectData> = ({
   imageUrl,
   imageAltText,
 }) => (
-  <div key={id}>
+  <div className="project-element" key={id}>
     <img src={imageUrl} alt={imageAltText} style={{ maxWidth: "25%" }} />
-    <h1>{title}</h1>
+    <h2>{title}</h2>
     <p>{content}</p>
   </div>
 );
 
 const ProjectElement: React.FC = () => {
   return (
-    <div className="project-element-component">
+    <div className="project-component">
       {jsonData.map((item: ProjectData) => (
         <ProjectComponent key={item.id} {...item} />
       ))}

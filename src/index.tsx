@@ -4,7 +4,8 @@ import AppRouter from "./components/AppRouter";
 // import "./style/Reset.css";
 import "./style/App.css";
 import "./style/Layer.css";
-import "./style/PromoElement.css";
+import "./style/Promo.css";
+import "./style/Project.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

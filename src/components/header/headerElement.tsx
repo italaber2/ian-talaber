@@ -1,3 +1,4 @@
+import React from "react";
 import jsonData from "../../data/headers.json";
 
 export interface HeaderContent {
@@ -13,7 +14,7 @@ const getHeaderDataById = (id: number) => {
 };
 
 const HeaderComponent: React.FC<HeaderContent> = ({ id, title, content }) => (
-  <div key={id}>
+  <div className="header-component" key={id}>
     <h1>{title}</h1>
     <p>{content}</p>
   </div>
@@ -29,9 +30,9 @@ const HeaderElement: React.FC<{ headerId: number }> = ({ headerId }) => {
   const { id, title, content } = headerData;
 
   return (
-    <div>
+    <React.Fragment>
       <HeaderComponent key={id} id={id} title={title} content={content} />
-    </div>
+    </React.Fragment>
   );
 };
 
