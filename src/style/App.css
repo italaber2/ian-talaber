@@ -6,14 +6,26 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.app {
+  position: relative;
+}
+
 .app,
 .promo,
+.projects,
 .header-component,
+.promo-component,
 .project-component {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border: 1px solid red;
+}
+
+.promo-component,
+.project-component {
+  width: 60vw;
 }
 
 h1 {

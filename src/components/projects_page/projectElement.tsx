@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import jsonData from "../../data/projects.json";
+import PromoElementDetailsLayer from "./projectElementDetailsLayer";
 
 interface ProjectData {
   id: number;
@@ -9,21 +10,51 @@ interface ProjectData {
   imageAltText: string;
 }
 
-const ProjectComponent: React.FC<ProjectData> = ({
+function ProjectComponent({
   id,
   title,
   content,
   imageUrl,
   imageAltText,
-}) => (
-  <div className="project-element" key={id}>
-    <img src={imageUrl} alt={imageAltText} style={{ maxWidth: "25%" }} />
-    <h2>{title}</h2>
-    <p>{content}</p>
-  </div>
-);
+}: ProjectData) {
+  const [layerVisible, setLayerVisible] = useState(false);
 
-const ProjectElement: React.FC = () => {
+  const openProjectElementDetails = () => {
+    setLayerVisible(true);
+  };
+
+  const closeProjectElementDetails = () => {
+    setLayerVisible(false);
+  };
+  return (
+    <div className="project-element" key={id}>
+      <div className="project-image" key={id}>
+        <img src={imageUrl} alt={imageAltText} />
+      </div>
+      <div className="project-text" key={id}>
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <button onClick={openProjectElementDetails}>More Info</button>
+      </div>
+      {layerVisible && (
+        <div className="overlay">
+          <div className="modal">
+            <PromoElementDetailsLayer
+              projectElement={{
+                name: "taco",
+                picture: "image",
+                description: "image description",
+              }}
+              onClose={closeProjectElementDetails}
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const ProjectElement = () => {
   return (
     <div className="project-component">
       {jsonData.map((item: ProjectData) => (

@@ -1,16 +1,9 @@
-.promo-component {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid red;
-}
-
 .promo-element {
   border: 5px solid #ccc;
   border-radius: 4px;
   padding: 10px;
   margin: 10px;
-  min-width: 100 vw;
+  min-width: 100vw;
 }
 
 .promo-image {

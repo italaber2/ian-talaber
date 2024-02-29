@@ -1,14 +1,22 @@
-.project-component {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid red;
-}
-
 .project-element {
-  border: 5px solid #ccc;
-  border-radius: 4px;
+  display: flex;
+  width: 400px;
+  max-height: 150px;
+  background-color: blue;
+  border-radius: 50px;
   padding: 10px;
   margin: 10px;
-  min-width: 100 vw;
+}
+
+.project-image {
+  flex: 1;
+}
+
+.project-text {
+  flex: 2;
+}
+
+.project-image img {
+  max-width: 100%;
+
 }

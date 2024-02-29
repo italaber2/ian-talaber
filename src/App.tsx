@@ -3,8 +3,6 @@ import PromoElementsContainer from "./components/overview_page/promoElementsCont
 import HeaderElement from "./components/header/headerElement";
 
 function App() {
-  const photo = require("/Users/ian.talaber/Documents/mentoring/not-xkcd/src/images/quackulator.png");
-  const photo2 = require("/Users/ian.talaber/Documents/mentoring/not-xkcd/src/images/react.png");
   return (
     <div className="app">
       <React.Fragment>
@@ -13,10 +11,6 @@ function App() {
       <React.Fragment>
         <PromoElementsContainer />
       </React.Fragment>
-      <div>
-        <img src={photo} alt=""></img>
-        <img src={photo2} alt=""></img>
-      </div>
     </div>
   );
 }
