@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import jsonData from "../../data/overview.json";
-import PromoElementDetailsLayer from "./promoElementDetailsLayer";
+import ElementDetailsLayer from "../common/elementDetailsLayer";
 
 interface PromoElementData {
   id: number;
@@ -43,8 +43,8 @@ function PromoComponent({
       {layerVisible && (
         <div className="overlay">
           <div className="modal">
-            <PromoElementDetailsLayer
-              promoElement={{
+            <ElementDetailsLayer
+              element={{
                 name: "taco",
                 picture: "image",
                 description: "image description",

@@ -1,4 +1,4 @@
-nav {
+/* nav {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -9,7 +9,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-}
+} */
 
 nav li {
   margin: 5px;
@@ -22,7 +22,6 @@ nav a {
   color: red;
 }
 
-/* Navigation Dropdown Menu CSS */
 .navigation-menu {
   position: absolute;
   display: inline-block;

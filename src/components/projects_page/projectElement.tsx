@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import jsonData from "../../data/projects.json";
-import PromoElementDetailsLayer from "./projectElementDetailsLayer";
+import ElementDetailsLayer from "../common/elementDetailsLayer";
 
 interface ProjectData {
   id: number;
@@ -39,11 +39,11 @@ function ProjectComponent({
       {layerVisible && (
         <div className="overlay">
           <div className="modal">
-            <PromoElementDetailsLayer
-              projectElement={{
-                name: "taco",
-                picture: "image",
-                description: "image description",
+            <ElementDetailsLayer
+              element={{
+                name: title,
+                picture: imageUrl,
+                description: imageAltText,
               }}
               onClose={closeProjectElementDetails}
             />
