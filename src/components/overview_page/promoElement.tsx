@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import jsonData from "../../data/overview.json";
+import projects from "../../data/projects.json";
+import skills from "../../data/skills.json";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
 
 interface PromoElementData {
@@ -8,6 +9,7 @@ interface PromoElementData {
   content: string;
   imageUrl: string;
   imageAltText: string;
+  highlight: boolean;
 }
 
 function PromoComponent({
@@ -55,11 +57,15 @@ function PromoComponent({
 }
 
 const PromoElement = () => {
+  const mergedData: PromoElementData[] = [...projects, ...skills];
+
   return (
     <div className="promo-component">
-      {jsonData.map((item: PromoElementData) => (
-        <PromoComponent key={item.id} {...item} />
-      ))}
+      {mergedData
+        .filter((item: PromoElementData) => item.highlight)
+        .map((item: PromoElementData) => (
+          <PromoComponent key={item.id} {...item} />
+        ))}
     </div>
   );
 };
