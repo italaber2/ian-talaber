@@ -1,19 +1,17 @@
 .promo-element {
-  border: 5px solid #ccc;
-  border-radius: 4px;
+  width: 150px;
+  height: 300px;
+  background-color: blue;
+  border-radius: 50px;
   padding: 10px;
   margin: 10px;
-  min-width: 100vw;
 }
 
 .promo-image {
-  background-size: cover;
+  padding: 10px;
+  height: 30%;
 }
 
-.text-overlay {
-  position: center;
-  top: 0;
-  right: 0;
-  color: red;
-  text-align: center;
+.promo-image img {
+  max-width: 100%;
 }

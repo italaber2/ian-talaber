@@ -19,11 +19,11 @@ function ProjectComponent({
 }: ProjectData) {
   const [layerVisible, setLayerVisible] = useState(false);
 
-  const openProjectElementDetails = () => {
+  const openDetailsLayer = () => {
     setLayerVisible(true);
   };
 
-  const closeProjectElementDetails = () => {
+  const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
   return (
@@ -34,7 +34,7 @@ function ProjectComponent({
       <div className="project-text" key={id}>
         <h2>{title}</h2>
         <p>{content}</p>
-        <button onClick={openProjectElementDetails}>More Info</button>
+        <button onClick={openDetailsLayer}>More Info</button>
       </div>
       {layerVisible && (
         <div className="overlay">
@@ -45,7 +45,7 @@ function ProjectComponent({
                 picture: imageUrl,
                 description: imageAltText,
               }}
-              onClose={closeProjectElementDetails}
+              onClose={closeDetailsLayer}
             />
           </div>
         </div>

@@ -19,37 +19,33 @@ function PromoComponent({
 }: PromoElementData) {
   const [layerVisible, setLayerVisible] = useState(false);
 
-  const openPromoElementDetails = () => {
+  const openDetailsLayer = () => {
     setLayerVisible(true);
   };
 
-  const closePromoElementDetails = () => {
+  const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
   return (
     <div className="promo-element" key={id}>
-      <div
-        className="promo-image"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})`,
-        }}
-      >
-        <div className="text-overlay">
-          <h2>{title}</h2>
-          <p>{content}</p>
-          <button onClick={openPromoElementDetails}>More Info</button>
-        </div>
+      <div className="promo-image" key={id}>
+        <img src={imageUrl} alt={imageAltText} />
+      </div>
+      <div className="promo-text" key={id}>
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <button onClick={openDetailsLayer}>More Info</button>
       </div>
       {layerVisible && (
         <div className="overlay">
           <div className="modal">
             <ElementDetailsLayer
               element={{
-                name: "taco",
-                picture: "image",
-                description: "image description",
+                name: title,
+                picture: imageUrl,
+                description: imageAltText,
               }}
-              onClose={closePromoElementDetails}
+              onClose={closeDetailsLayer}
             />
           </div>
         </div>
