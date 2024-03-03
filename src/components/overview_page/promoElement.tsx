@@ -7,6 +7,7 @@ interface PromoElementData {
   id: number;
   title: string;
   content: string;
+  extendedContent: string;
   imageUrl: string;
   imageAltText: string;
   highlight: boolean;
@@ -16,6 +17,7 @@ function PromoComponent({
   id,
   title,
   content,
+  extendedContent,
   imageUrl,
   imageAltText,
 }: PromoElementData) {
@@ -45,7 +47,7 @@ function PromoComponent({
               element={{
                 name: title,
                 picture: imageUrl,
-                description: imageAltText,
+                description: extendedContent,
               }}
               onClose={closeDetailsLayer}
             />

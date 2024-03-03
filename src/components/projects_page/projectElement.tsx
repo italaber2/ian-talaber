@@ -6,6 +6,7 @@ interface ProjectData {
   id: number;
   title: string;
   content: string;
+  extendedContent: string;
   imageUrl: string;
   imageAltText: string;
 }
@@ -14,6 +15,7 @@ function ProjectComponent({
   id,
   title,
   content,
+  extendedContent,
   imageUrl,
   imageAltText,
 }: ProjectData) {
@@ -43,7 +45,7 @@ function ProjectComponent({
               element={{
                 name: title,
                 picture: imageUrl,
-                description: imageAltText,
+                description: extendedContent,
               }}
               onClose={closeDetailsLayer}
             />
