@@ -47,7 +47,7 @@ nav a {
 
 .dropdown-menu.show {
   display: block;
-  width: 250px;
+  min-width: 7vw;
 }
 
 .dropdown-menu ul {

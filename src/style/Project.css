@@ -1,7 +1,6 @@
 .project-element {
   display: flex;
-  width: 400px;
-  max-height: 150px;
+  width: 90%;
   background-color: blue;
   border-radius: 50px;
   padding: 10px;
@@ -17,6 +16,6 @@
 }
 
 .project-image img {
-  max-width: 100%;
+  max-width: 70%;
 
 }

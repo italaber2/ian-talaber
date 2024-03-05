@@ -36,7 +36,7 @@
 
 .layer-content {
   position: relative;
-  max-width: 600px;
+  max-width: 30vw;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -44,7 +44,7 @@
 }
 
 .layer-content img {
-  max-width: 10vw;
+  width: 20vw;
 }
 
 .button {
