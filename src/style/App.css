@@ -7,8 +7,10 @@ body {
 }
 
 .app,
+.promo,
 .skills,
 .projects,
+.container,
 .promo-component,
 .header-component,
 .project-component {
@@ -16,13 +18,22 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .app,
+.promo,
 .skills,
 .projects {
-  max-width: 60vw;
+  max-width: 50vw;
+  min-width: 340px;
+}
+
+.container {
+  flex-direction: row;
+  min-width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .project-component {
@@ -31,6 +42,7 @@ body {
 
 .promo-component {
   flex-direction: row;
+  min-width: 100%;
 }
 
 p {

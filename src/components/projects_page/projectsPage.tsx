@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectElementsContainer from "./projectElementsContainer";
-import HeaderElement from "../header/headerElement";
+import HeaderElement from "../common/headerElement";
 
 function ProjectsPage() {
   return (

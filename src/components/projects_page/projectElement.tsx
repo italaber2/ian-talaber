@@ -31,7 +31,7 @@ function ProjectComponent({
   return (
     <div className="project-element" key={id}>
       <div className="project-image" key={id}>
-        <img src={imageUrl} alt={imageAltText} />
+        <img src={imageUrl} alt={imageAltText} width="100" height="100" />
       </div>
       <div className="project-text" key={id}>
         <h2>{title}</h2>

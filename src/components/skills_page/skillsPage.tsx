@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderElement from "../header/headerElement";
+import HeaderElement from "../common/headerElement";
 
 function SkillsPage() {
   return (
