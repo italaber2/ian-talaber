@@ -1,4 +1,5 @@
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
+import React, { useEffect } from "react";
 
 interface ElementDetailsProp {
   element: { name: string; picture: string; description: string };
@@ -6,6 +7,20 @@ interface ElementDetailsProp {
 }
 
 function ElementDetailsLayer({ element, onClose }: ElementDetailsProp) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <div className="layer">
       <div className="layer-content">

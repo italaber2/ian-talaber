@@ -1,8 +1,9 @@
 .promo-element {
-  max-width: 10vw;
+  width: 90%;
   min-height: 20vw;
-  background-color: blue;
-  border-radius: 50px;
+  background-color: #8989895e;
+  border: 0.05px solid white;
+  border-radius: 0.5rem;
   padding: 10px;
   margin: 10px;
 }

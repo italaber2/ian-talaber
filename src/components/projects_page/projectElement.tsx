@@ -29,28 +29,26 @@ function ProjectComponent({
     setLayerVisible(false);
   };
   return (
-    <div className="project-element" key={id}>
-      <div className="project-image" key={id}>
+    <div className="project-element" key={title} onClick={openDetailsLayer}>
+      <div className="project-image" key={title}>
         <img src={imageUrl} alt={imageAltText} width="100" height="100" />
       </div>
-      <div className="project-text" key={id}>
+      <div className="project-text" key={title}>
         <h2>{title}</h2>
         <p>{content}</p>
-        <button onClick={openDetailsLayer}>More Info</button>
+        {/* <button onClick={openDetailsLayer}>More Info</button> */}
       </div>
       {layerVisible && (
-        <div className="overlay">
-          <div className="modal">
-            <ElementDetailsLayer
-              element={{
-                name: title,
-                picture: imageUrl,
-                description: extendedContent,
-              }}
-              onClose={closeDetailsLayer}
-            />
-          </div>
-        </div>
+        <React.Fragment>
+          <ElementDetailsLayer
+            element={{
+              name: title,
+              picture: imageUrl,
+              description: extendedContent,
+            }}
+            onClose={closeDetailsLayer}
+          />
+        </React.Fragment>
       )}
     </div>
   );
@@ -60,7 +58,7 @@ const ProjectElement = () => {
   return (
     <div className="project-component">
       {jsonData.map((item: ProjectData) => (
-        <ProjectComponent key={item.id} {...item} />
+        <ProjectComponent key={item.title} {...item} />
       ))}
     </div>
   );

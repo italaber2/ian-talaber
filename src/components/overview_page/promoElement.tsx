@@ -31,27 +31,25 @@ function PromoComponent({
     setLayerVisible(false);
   };
   return (
-    <div className="promo-element" key={id}>
-      <div className="promo-image" key={id}>
+    <div className="promo-element" key={title}>
+      <div className="promo-image" key={title}>
         <img src={imageUrl} alt={imageAltText} />
       </div>
-      <div className="promo-text" key={id}>
+      <div className="promo-text" key={title}>
         <h2>{title}</h2>
         <p>{content}</p>
         <button onClick={openDetailsLayer}>More Info</button>
       </div>
       {layerVisible && (
         <div className="overlay">
-          <div className="modal">
-            <ElementDetailsLayer
-              element={{
-                name: title,
-                picture: imageUrl,
-                description: extendedContent,
-              }}
-              onClose={closeDetailsLayer}
-            />
-          </div>
+          <ElementDetailsLayer
+            element={{
+              name: title,
+              picture: imageUrl,
+              description: extendedContent,
+            }}
+            onClose={closeDetailsLayer}
+          />
         </div>
       )}
     </div>
@@ -66,7 +64,7 @@ const PromoElement = () => {
       {mergedData
         .filter((item: PromoElementData) => item.highlight)
         .map((item: PromoElementData) => (
-          <PromoComponent key={item.id} {...item} />
+          <PromoComponent key={item.title} {...item} />
         ))}
     </div>
   );
