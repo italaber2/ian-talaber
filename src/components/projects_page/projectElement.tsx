@@ -14,7 +14,7 @@ interface ProjectData {
 function ProjectComponent({
   id,
   title,
-  content,
+  // content,
   extendedContent,
   imageUrl,
   imageAltText,
@@ -35,7 +35,7 @@ function ProjectComponent({
       </div>
       <div className="project-text" key={title}>
         <h2>{title}</h2>
-        <p>{content}</p>
+        {/* <p>{content}</p> */}
         {/* <button onClick={openDetailsLayer}>More Info</button> */}
       </div>
       {layerVisible && (

@@ -1,11 +1,12 @@
 .project-element {
   display: flex;
-  width: 90%;
+  align-items: center;
   background-color: #8989895e;
   border: 0.05px solid white;
   border-radius: 0.5rem;
   padding: 10px;
-  margin: 10px;
+  margin: 11px;
+  flex: 0 0 calc(44% - 0px);
 }
 
 .project-image {
