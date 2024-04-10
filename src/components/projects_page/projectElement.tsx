@@ -29,14 +29,14 @@ function ProjectComponent({
     setLayerVisible(false);
   };
   return (
-    <div className="project-element" key={title} onClick={openDetailsLayer}>
-      <div className="project-image" key={title}>
-        <img src={imageUrl} alt={imageAltText} width="100" height="100" />
-      </div>
-      <div className="project-text" key={title}>
-        <h2>{title}</h2>
-        {/* <p>{content}</p> */}
-        {/* <button onClick={openDetailsLayer}>More Info</button> */}
+    <React.Fragment>
+      <div className="project-element" key={title} onClick={openDetailsLayer}>
+        <div className="project-image" key={title}>
+          <img src={imageUrl} alt={imageAltText} width="100" height="100" />
+        </div>
+        <div className="project-text" key={title}>
+          <h2>{title}</h2>
+        </div>
       </div>
       {layerVisible && (
         <React.Fragment>
@@ -50,7 +50,7 @@ function ProjectComponent({
           />
         </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -31,17 +31,18 @@ function PromoComponent({
     setLayerVisible(false);
   };
   return (
-    <div className="promo-element" key={title}>
-      <div className="promo-image" key={title}>
-        <img src={imageUrl} alt={imageAltText} />
-      </div>
-      <div className="promo-text" key={title}>
-        <h2>{title}</h2>
-        <p>{content}</p>
-        <button onClick={openDetailsLayer}>More Info</button>
+    <React.Fragment>
+      <div className="promo-element" key={title} onClick={openDetailsLayer}>
+        <div className="promo-image" key={title}>
+          <img src={imageUrl} alt={imageAltText} />
+        </div>
+        <div className="promo-text" key={title}>
+          <h2>{title}</h2>
+          <p>{content}</p>
+        </div>
       </div>
       {layerVisible && (
-        <div className="overlay">
+        <React.Fragment>
           <ElementDetailsLayer
             element={{
               name: title,
@@ -50,9 +51,9 @@ function PromoComponent({
             }}
             onClose={closeDetailsLayer}
           />
-        </div>
+        </React.Fragment>
       )}
-    </div>
+    </React.Fragment>
   );
 }
 

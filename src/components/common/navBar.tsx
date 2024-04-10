@@ -6,13 +6,7 @@ function NavBar() {
     <div className="container">
       <div className="headshot">
         <Link data-testid="home-page-link" href="/" className="image-link">
-          <img
-            src="/headshot.jpeg"
-            alt="headshot"
-            width="100"
-            height="100"
-            style={{ cursor: "pointer" }}
-          />
+          <img src="/headshot.jpeg" alt="headshot" />
           <div className="hover-border"></div>
         </Link>
       </div>
@@ -52,6 +46,8 @@ function NavBar() {
                 style={{ cursor: "pointer" }}
               />
             </a>
+          </li>
+          <li>
             <a
               data-testid="linkedin-link"
               href="https://linkedin.com/in/italaber"
