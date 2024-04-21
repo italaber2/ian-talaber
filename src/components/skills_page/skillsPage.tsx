@@ -8,7 +8,11 @@ interface ProjectData {
   title: string;
 }
 
-function ButtonWrapper(setSelectedProjectId: (id: number) => void) {
+interface ButtonWrapperProps {
+  setSelectedProjectId: (id: number) => void;
+}
+
+function ButtonWrapper({ setSelectedProjectId }: ButtonWrapperProps) {
   return (
     <div className="button-wrapper">
       {jsonData.map((item: ProjectData) => (

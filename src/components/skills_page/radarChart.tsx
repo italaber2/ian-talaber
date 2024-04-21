@@ -1,22 +1,60 @@
-import React from "react";
-// import { RadarData, RadarOptions } from "./radarConfig";
-import { Radar } from "react-chartjs-2";
+import React, { Component } from "react";
+import Chart from "react-apexcharts";
+import jsonData from "../../data/projects.json";
 
-<Radar
-  datasetIdKey="id"
-  data={{
-    labels: ["Jun", "Jul", "Aug"],
-    datasets: [
-      {
-        label: "March",
-        backgroundColor: "rgba(34, 202, 236, .2)",
-        borderColor: "rgba(34, 202, 236, 1)",
-        pointBackgroundColor: "rgba(34, 202, 236, 1)",
-        pointBorderColor: "#fff",
-        pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgba(34, 202, 236, 1)",
-        data: [13, 10, 12, 6, 5],
+interface AppState {
+  options: {
+    chart: {
+      id: string;
+    };
+    xaxis: {
+      categories: number[];
+    };
+  };
+  series: {
+    name: string;
+    data: number[];
+  }[];
+}
+
+class MyComponent extends Component<{}, AppState> {
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {
+      options: {
+        chart: {
+          id: "basic-bar",
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        },
       },
-    ],
-  }}
-/>;
+      series: [
+        {
+          name: "series-1",
+          data: [30, 40, 45, 50, 49, 60, 70, 91],
+        },
+      ],
+    };
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <div className="row">
+          <div className="mixed-chart">
+            <Chart
+              options={this.state.options}
+              series={this.state.series}
+              type="bar"
+              width="500"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
