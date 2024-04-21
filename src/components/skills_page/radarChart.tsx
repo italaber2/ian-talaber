@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import jsonData from "../../data/projects.json";
 
-interface AppState {
+interface MyComponentProps {
+  seriesData: number[];
+}
+
+interface MyComponentState {
   options: {
     chart: {
       id: string;
@@ -17,8 +20,8 @@ interface AppState {
   }[];
 }
 
-class MyComponent extends Component<{}, AppState> {
-  constructor(props: {}) {
+class MyComponent extends Component<MyComponentProps, MyComponentState> {
+  constructor(props: MyComponentProps) {
     super(props);
 
     this.state = {
@@ -33,10 +36,23 @@ class MyComponent extends Component<{}, AppState> {
       series: [
         {
           name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91],
+          data: this.props.seriesData,
         },
       ],
     };
+  }
+
+  componentDidUpdate(prevProps: MyComponentProps) {
+    if (this.props.seriesData !== prevProps.seriesData) {
+      this.setState({
+        series: [
+          {
+            name: "series-1",
+            data: this.props.seriesData,
+          },
+        ],
+      });
+    }
   }
 
   render() {

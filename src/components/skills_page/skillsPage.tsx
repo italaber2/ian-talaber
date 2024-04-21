@@ -6,6 +6,7 @@ import jsonData from "../../data/projects.json";
 interface ProjectData {
   id: number;
   title: string;
+  data: number[];
 }
 
 interface ButtonWrapperProps {
@@ -30,21 +31,27 @@ function ButtonWrapper({ setSelectedProjectId }: ButtonWrapperProps) {
 }
 
 function SkillsPage() {
-  const [selectedProjectId, setSelectedProjectId] = useState(0);
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
+    null
+  );
+
+  const selectedProject =
+    selectedProjectId !== null
+      ? jsonData.find((item: ProjectData) => item.id === selectedProjectId)
+      : null;
+
+  const selectedProjectData = selectedProject ? selectedProject.data : [];
+
   return (
     <div className="skills">
       <React.Fragment>
         <HeaderElement headerId={3} />
       </React.Fragment>
       <React.Fragment>
-        <ButtonWrapper
-          setSelectedProjectId={(id: number) => {
-            return setSelectedProjectId(id);
-          }}
-        ></ButtonWrapper>
-        {/* Each button should take the json.title as it's text and json.id as the value */}
-        {/* useState variable to set selected project id and hand it over to MyComponent */}
-        <MyComponent></MyComponent>
+        <ButtonWrapper setSelectedProjectId={setSelectedProjectId} />
+        {selectedProjectData.length > 0 && (
+          <MyComponent seriesData={selectedProjectData} />
+        )}
       </React.Fragment>
     </div>
   );
