@@ -1,5 +1,3 @@
-// radarChartConfig.ts
-
 export interface ChartOptions {
   chart: {
     type: "radar";
