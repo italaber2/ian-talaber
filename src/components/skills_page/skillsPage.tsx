@@ -9,22 +9,47 @@ interface ProjectData {
   data: number[];
 }
 
-interface ButtonWrapperProps {
-  setSelectedProjectId: (id: number) => void;
+interface ButtonProps {
+  projectName: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-function ButtonWrapper({ setSelectedProjectId }: ButtonWrapperProps) {
+interface ButtonWrapperProps {
+  setProjectId: (id: number) => void;
+}
+
+function Button({ projectName, isSelected, onClick }: ButtonProps) {
+  return (
+    <button
+      className={`project-button ${isSelected ? "selected" : ""}`}
+      onClick={onClick}
+    >
+      {projectName}
+    </button>
+  );
+}
+
+function ButtonWrapper({ setProjectId }: ButtonWrapperProps) {
+  const [selectedButtonId, setSelectedButtonId] = useState<number | null>(null);
+
+  const handleButtonClick = (projectId: number) => {
+    if (selectedButtonId === projectId) {
+      return;
+    }
+    setSelectedButtonId(projectId === selectedButtonId ? null : projectId);
+    setProjectId(projectId);
+  };
+
   return (
     <div className="button-wrapper">
       {jsonData.map((item: ProjectData) => (
-        <button
+        <Button
           key={item.id}
-          onClick={() => {
-            setSelectedProjectId(item.id);
-          }}
-        >
-          {item.title}
-        </button>
+          projectName={item.title}
+          isSelected={selectedButtonId === item.id}
+          onClick={() => handleButtonClick(item.id)}
+        />
       ))}
     </div>
   );
@@ -48,7 +73,7 @@ function SkillsPage() {
         <HeaderElement headerId={3} />
       </React.Fragment>
       <React.Fragment>
-        <ButtonWrapper setSelectedProjectId={setSelectedProjectId} />
+        <ButtonWrapper setProjectId={setSelectedProjectId} />
         {selectedProjectData.length > 0 && (
           <MyComponent seriesData={selectedProjectData} />
         )}

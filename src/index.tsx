@@ -6,6 +6,7 @@ import "./style/App.css";
 import "./style/Nav.css";
 import "./style/Layer.css";
 import "./style/Promo.css";
+import "./style/Skills.css";
 import "./style/Project.css";
 
 const root = ReactDOM.createRoot(
