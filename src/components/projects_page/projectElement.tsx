@@ -42,7 +42,7 @@ function ProjectComponent({
         <React.Fragment>
           <ElementDetailsLayer
             element={{
-              name: title,
+              name: "",
               picture: imageUrl,
               description: extendedContent,
             }}

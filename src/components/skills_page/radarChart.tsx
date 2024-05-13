@@ -12,7 +12,7 @@ interface MyComponentProps {
 }
 
 const MyComponent = ({ seriesData }: MyComponentProps) => {
-  const [] = useState<ChartOptions>(defaultOptions);
+  const [chartOptions] = useState<ChartOptions>(defaultOptions);
   const [series, setSeries] = useState<ChartSeries[]>(defaultSeries);
 
   useEffect(() => {

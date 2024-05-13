@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Quackulator",
+    "content": "It does exactly what you'd expect from the name... quack.",
+    "extendedContent": "Like the content field but this one should have more words included.... I'll get around to updating it later.",
+    "imageUrl": "/quackulatorLogo.png",
+    "imageAltText": "Duck accountant.",
+    "highlight": false,
+    "dateCreated": "2022-03-02T23:59:00.000Z",
+    "dateUpdated": "2022-03-02T23:59:00.000Z",
+    "data": [1, 2, 30, 40, 50, 60, 77, 80]
+  },
+  {
+    "id": 2,
+    "title": "50 Things",
+    "content": "Test.",
+    "extendedContent": "Like the content field but this one should have more words included.... I'll get around to updating it later.",
+    "imageUrl": "/reactLogo.png",
+    "imageAltText": "Test.",
+    "highlight": false,
+    "dateCreated": "2022-03-02T23:59:00.000Z",
+    "dateUpdated": "2022-03-02T23:59:00.000Z",
+    "data": [20, 10, 30, 20, 40, 30, 50, 40]
+  },
+  {
+    "id": 7,
+    "title": "Simple Search",
+    "content": "Miaou.",
+    "extendedContent": "Like the content field but this one should have more words included.... I'll get around to updating it later.",
+    "imageUrl": "https://media.wired.com/photos/5cdefb92b86e041493d389df/16:9/w_1487,h_836,c_limit/Culture-Grumpy-Cat-487386121.jpg",
+    "imageAltText": "A grumpy cat.",
+    "highlight": false,
+    "dateCreated": "2022-03-02T23:59:00.000Z",
+    "dateUpdated": "2022-03-02T23:59:00.000Z",
+    "data": [25, 35, 1, 50, 40, 30, 50, 40]
+  }
+]

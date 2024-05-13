@@ -1,5 +1,6 @@
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
 import React, { useEffect } from "react";
+import { Link } from "wouter";
 
 interface ElementDetailsProp {
   element: { name: string; picture: string; description: string };
@@ -27,6 +28,9 @@ function ElementDetailsLayer({ element, onClose }: ElementDetailsProp) {
         <h2>{element.name}</h2>
         <img src={element.picture} alt={element.name} />
         <p>{element.description}</p>
+        <Link to="/skills" className="layer-link">
+          See the project skills
+        </Link>
         <button className="button" onClick={onClose}>
           <CloseIcon />
         </button>

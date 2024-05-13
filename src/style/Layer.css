@@ -26,6 +26,17 @@
   width: 20vw;
 }
 
+.layer-link {
+  font-size: 1em;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+.layer-link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
 .button {
   position: absolute;
   top: 10px;
