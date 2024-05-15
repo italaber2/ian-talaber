@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderElement from "../common/headerElement";
-import MyComponent from "./radarChart";
+import RadarChart from "./radarChart";
+import LineGraph from "./lineGraph";
 import jsonData from "../../data/projects.json";
 
 interface ProjectData {
@@ -16,8 +17,12 @@ interface ButtonProps {
 }
 
 interface ButtonWrapperProps {
-  setProjectId: (id: number) => void;
+  setProjectId: (id: number | null) => void;
+  setLineGraphSelected: (selected: boolean) => void;
+  isLineGraphSelected: boolean;
 }
+
+const defaultLineGraphData = [10, 20, 30, 40, 50]; // Example default data
 
 function Button({ projectName, isSelected, onClick }: ButtonProps) {
   return (
@@ -30,15 +35,26 @@ function Button({ projectName, isSelected, onClick }: ButtonProps) {
   );
 }
 
-function ButtonWrapper({ setProjectId }: ButtonWrapperProps) {
+function ButtonWrapper({
+  setProjectId,
+  setLineGraphSelected,
+  isLineGraphSelected,
+}: ButtonWrapperProps) {
   const [selectedButtonId, setSelectedButtonId] = useState<number | null>(null);
 
   const handleButtonClick = (projectId: number) => {
+    setLineGraphSelected(false);
     if (selectedButtonId === projectId) {
       return;
     }
-    setSelectedButtonId(projectId === selectedButtonId ? null : projectId);
+    setSelectedButtonId(projectId);
     setProjectId(projectId);
+  };
+
+  const handleLineGraphClick = () => {
+    setSelectedButtonId(null);
+    setLineGraphSelected(true);
+    setProjectId(null);
   };
 
   return (
@@ -51,6 +67,11 @@ function ButtonWrapper({ setProjectId }: ButtonWrapperProps) {
           onClick={() => handleButtonClick(item.id)}
         />
       ))}
+      <Button
+        projectName="Line Graph"
+        isSelected={isLineGraphSelected}
+        onClick={handleLineGraphClick}
+      />
     </div>
   );
 }
@@ -59,6 +80,7 @@ function SkillsPage() {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
     null
   );
+  const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(false);
 
   const selectedProject =
     selectedProjectId !== null
@@ -66,6 +88,9 @@ function SkillsPage() {
       : null;
 
   const selectedProjectData = selectedProject ? selectedProject.data : [];
+  const seriesData = isLineGraphSelected
+    ? defaultLineGraphData
+    : selectedProjectData;
 
   return (
     <div className="skills">
@@ -73,10 +98,15 @@ function SkillsPage() {
         <HeaderElement headerId={3} />
       </React.Fragment>
       <React.Fragment>
-        <ButtonWrapper setProjectId={setSelectedProjectId} />
-        {selectedProjectData.length > 0 && (
-          <MyComponent seriesData={selectedProjectData} />
+        <ButtonWrapper
+          setProjectId={setSelectedProjectId}
+          setLineGraphSelected={setLineGraphSelected}
+          isLineGraphSelected={isLineGraphSelected}
+        />
+        {seriesData.length > 0 && !isLineGraphSelected && (
+          <RadarChart seriesData={seriesData} />
         )}
+        {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
       </React.Fragment>
     </div>
   );

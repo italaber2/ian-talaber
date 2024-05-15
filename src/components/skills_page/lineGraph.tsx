@@ -1,40 +1,34 @@
-// import React, { useEffect, useState } from "react";
-// import Chart from "react-apexcharts";
-// import { defaultOptions } from "../common/lineGraphConfig";
+import React, { useEffect, useState } from "react";
+import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
+import { defaultLineOptions, defaultSeries } from "../common/lineGraphConfig";
 
-// interface MyComponentProps {
-//   seriesData: number[];
-// }
+interface MyComponentProps {
+  seriesData: number[];
+}
 
-// const MyComponent = ({ seriesData }: MyComponentProps) => {
-//   const [series, setSeries] = useState<Array<{ name: string; data: number[] }>>(
-//     []
-//   );
+const LineGraph = ({ seriesData }: MyComponentProps) => {
+  const [graphOptions] = useState<ApexOptions>(defaultLineOptions);
+  const [series, setSeries] = useState(defaultSeries);
 
-//   useEffect(() => {
-//     if (defaultOptions.series) {
-//       // Check if defaultOptions.series is defined
-//       const updatedSeries = [
-//         { ...defaultOptions.series[0], data: seriesData.slice() }, // Copy array before modification
-//       ];
-//       setSeries(updatedSeries);
-//     }
-//   }, [seriesData]);
+  useEffect(() => {
+    setSeries([{ ...defaultSeries[0], data: seriesData }]);
+  }, [seriesData]);
 
-//   return (
-//     <div className="app">
-//       <div className="row">
-//         <div className="line-chart">
-//           <Chart
-//             options={defaultOptions}
-//             series={series}
-//             type="line"
-//             width="650"
-//           />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <div className="app">
+      <div className="row">
+        <div className="line-graph">
+          <Chart
+            options={graphOptions}
+            series={series}
+            type="line"
+            width="650"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-// export default MyComponent;
+export default LineGraph;

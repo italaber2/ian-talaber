@@ -1,24 +1,61 @@
+// lineChartConfig.ts
 import { ApexOptions } from "apexcharts";
 
-export interface ChartOptions extends ApexOptions {
+export const defaultLineOptions: ApexOptions = {
   chart: {
-    type: "line";
-  };
-  xaxis: {
-    categories: number[];
-  };
-}
-
-export interface ChartSeries {
-  name: string;
-  data: number[];
-}
-
-export const defaultOptions: ChartOptions = {
-  chart: {
-    type: "line",
+    id: "basic-line",
+    type: "line", // explicitly specify the type as "line"
+    toolbar: {
+      show: true,
+    },
   },
   xaxis: {
-    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+  },
+  stroke: {
+    curve: "smooth",
+  },
+  title: {
+    text: "Monthly Sales Data",
+    align: "left",
+  },
+  yaxis: {
+    title: {
+      text: "Sales (in units)",
+    },
+  },
+  tooltip: {
+    enabled: true,
+    shared: true,
+    intersect: false,
+  },
+  markers: {
+    size: 4,
+    colors: ["#FFA41B"],
+    strokeWidth: 2,
+  },
+  legend: {
+    position: "top",
+    horizontalAlign: "right",
   },
 };
+
+export const defaultSeries = [
+  {
+    name: "Sales",
+    data: [30, 40, 35, 50, 49, 60, 70, 91, 125, 140, 155, 160],
+  },
+];
