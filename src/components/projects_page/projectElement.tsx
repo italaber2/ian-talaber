@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import jsonData from "../../data/projects.json";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
+import { Link } from "wouter";
 
 interface ProjectData {
   id: number;
@@ -28,6 +29,13 @@ function ProjectComponent({
   const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
+
+  const link = (
+    <Link to="/skills" className="layer-link">
+      See the project skills
+    </Link>
+  );
+
   return (
     <React.Fragment>
       <div className="project-element" key={title} onClick={openDetailsLayer}>
@@ -45,6 +53,7 @@ function ProjectComponent({
               name: "",
               picture: imageUrl,
               description: extendedContent,
+              link: link,
             }}
             onClose={closeDetailsLayer}
           />

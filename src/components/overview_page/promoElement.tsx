@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import projects from "../../data/projects.json";
 import skills from "../../data/skills.json";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
+import { Link } from "wouter";
 
 interface PromoElementData {
   id: number;
@@ -30,6 +31,13 @@ function PromoComponent({
   const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
+
+  const link = (
+    <Link to="/projects" className="layer-link">
+      See the project
+    </Link>
+  );
+
   return (
     <React.Fragment>
       <div className="promo-element" key={title} onClick={openDetailsLayer}>
@@ -48,6 +56,7 @@ function PromoComponent({
               name: "",
               picture: imageUrl,
               description: extendedContent,
+              link: link,
             }}
             onClose={closeDetailsLayer}
           />
