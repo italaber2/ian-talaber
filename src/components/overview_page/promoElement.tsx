@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import projects from "../../data/projects.json";
-import skills from "../../data/skills.json";
+import rawProjects from "../../data/projects.json";
+import rawSkills from "../../data/skills.json";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
 import { Link } from "wouter";
 
@@ -12,7 +12,12 @@ interface PromoElementData {
   imageUrl: string;
   imageAltText: string;
   highlight: boolean;
+  type: "project" | "skill"; // Add a type property
 }
+
+// Type assertions for the JSON data
+const projects: PromoElementData[] = rawProjects as PromoElementData[];
+const skills: PromoElementData[] = rawSkills as PromoElementData[];
 
 function PromoComponent({
   id,
@@ -21,6 +26,7 @@ function PromoComponent({
   extendedContent,
   imageUrl,
   imageAltText,
+  type, // Destructure the type property
 }: PromoElementData) {
   const [layerVisible, setLayerVisible] = useState(false);
 
@@ -32,9 +38,13 @@ function PromoComponent({
     setLayerVisible(false);
   };
 
+  // Determine the link text and URL based on the type
   const link = (
-    <Link to="/projects" className="layer-link">
-      See the project
+    <Link
+      to={type === "project" ? "/projects" : "/skills"}
+      className="layer-link"
+    >
+      {type === "project" ? "See the project" : "See the skill"}
     </Link>
   );
 
