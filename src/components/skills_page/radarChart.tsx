@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import {
-  ChartOptions,
   ChartSeries,
   defaultOptions,
   defaultSeries,
@@ -12,7 +11,6 @@ interface MyComponentProps {
 }
 
 const MyComponent = ({ seriesData }: MyComponentProps) => {
-  const [chartOptions] = useState<ChartOptions>(defaultOptions);
   const [series, setSeries] = useState<ChartSeries[]>(defaultSeries);
 
   useEffect(() => {

@@ -26,7 +26,7 @@ function PromoComponent({
   extendedContent,
   imageUrl,
   imageAltText,
-  type, // Destructure the type property
+  type,
 }: PromoElementData) {
   const [layerVisible, setLayerVisible] = useState(false);
 
@@ -38,7 +38,6 @@ function PromoComponent({
     setLayerVisible(false);
   };
 
-  // Determine the link text and URL based on the type
   const link = (
     <Link
       to={type === "project" ? "/projects" : "/skills"}
