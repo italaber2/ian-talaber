@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectElementsContainer from "./projectElementsContainer";
+import ProjectListContainer from "./projectListContainer";
 import HeaderElement from "../common/headerElement";
 
 function ProjectsPage() {
@@ -9,7 +9,7 @@ function ProjectsPage() {
         <HeaderElement headerId={2} />
       </React.Fragment>
       <React.Fragment>
-        <ProjectElementsContainer />
+        <ProjectListContainer />
       </React.Fragment>
     </div>
   );

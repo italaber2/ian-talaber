@@ -40,7 +40,7 @@ function PromoComponent({
 
   const link = (
     <Link
-      to={type === "project" ? "/projects" : "/skills"}
+      to={type === "project" ? `/projects?id=${id}` : `/skills?id=${id}`}
       className="layer-link"
     >
       {type === "project" ? "See the project" : "See the skill"}

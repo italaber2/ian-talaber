@@ -1,74 +1,56 @@
 import React, { useState } from "react";
-import jsonData from "../../data/projects.json";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
-import { Link } from "wouter";
 
 interface ProjectData {
   id: number;
   title: string;
-  content: string;
   extendedContent: string;
   imageUrl: string;
   imageAltText: string;
+  showLayer: boolean;
 }
 
-function ProjectComponent({
+const ProjectElement = ({
   id,
   title,
-  // content,
   extendedContent,
   imageUrl,
   imageAltText,
-}: ProjectData) {
-  const [layerVisible, setLayerVisible] = useState(false);
-
-  const openDetailsLayer = () => {
-    setLayerVisible(true);
-  };
+  showLayer,
+}: ProjectData) => {
+  const [layerVisible, setLayerVisible] = useState(showLayer);
 
   const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
 
-  const link = (
-    <Link to="/skills" className="layer-link">
-      See the project skills
-    </Link>
-  );
-
   return (
-    <React.Fragment>
-      <div className="project-element" key={title} onClick={openDetailsLayer}>
+    <div>
+      {/* <div className="projects-list"> */}
+      <div
+        key={id}
+        className="project-element"
+        onClick={() => {
+          setLayerVisible(true);
+        }}
+      >
         <div className="project-image" key={title}>
           <img src={imageUrl} alt={imageAltText} width="100" height="100" />
         </div>
-        <div className="project-text" key={title}>
-          <h2>{title}</h2>
-        </div>
+        <h2 className="project-text">{title}</h2>
       </div>
+      {/* </div> */}
       {layerVisible && (
-        <React.Fragment>
-          <ElementDetailsLayer
-            element={{
-              name: "",
-              picture: imageUrl,
-              description: extendedContent,
-              link: link,
-            }}
-            onClose={closeDetailsLayer}
-          />
-        </React.Fragment>
+        <ElementDetailsLayer
+          element={{
+            name: title,
+            picture: imageUrl,
+            description: extendedContent,
+            link: <a href={`/projects?id=${id}`}>View Project</a>,
+          }}
+          onClose={closeDetailsLayer}
+        />
       )}
-    </React.Fragment>
-  );
-}
-
-const ProjectElement = () => {
-  return (
-    <div className="project-component">
-      {jsonData.map((item: ProjectData) => (
-        <ProjectComponent key={item.title} {...item} />
-      ))}
     </div>
   );
 };
