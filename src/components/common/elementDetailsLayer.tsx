@@ -33,7 +33,12 @@ function ElementDetailsLayer({ element, onClose }: ElementDetailsProp) {
         <img src={element.picture} alt={element.name} />
         <p>{element.description}</p>
         {element.link}
-        <button className="button" onClick={onClose}>
+        <button
+          className="button"
+          onClick={() => {
+            onClose();
+          }}
+        >
           <CloseIcon />
         </button>
       </div>

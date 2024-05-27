@@ -12,10 +12,9 @@ interface PromoElementData {
   imageUrl: string;
   imageAltText: string;
   highlight: boolean;
-  type: "project" | "skill"; // Add a type property
+  type: "project" | "skill";
 }
 
-// Type assertions for the JSON data
 const projects: PromoElementData[] = rawProjects as PromoElementData[];
 const skills: PromoElementData[] = rawSkills as PromoElementData[];
 

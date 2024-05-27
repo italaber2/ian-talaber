@@ -18,7 +18,7 @@ const ProjectsPage = () => {
   const projectId = searchParams.get("id");
 
   return (
-    <div>
+    <div className="project-component">
       {projects.map((project) => (
         <ProjectElement
           id={project.id}

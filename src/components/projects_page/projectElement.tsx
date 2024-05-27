@@ -20,36 +20,33 @@ const ProjectElement = ({
 }: ProjectData) => {
   const [layerVisible, setLayerVisible] = useState(showLayer);
 
+  const openDetailsLayer = () => {
+    setLayerVisible(true);
+  };
+
   const closeDetailsLayer = () => {
     setLayerVisible(false);
   };
 
   return (
-    <div>
-      {/* <div className="projects-list"> */}
-      <div
-        key={id}
-        className="project-element"
-        onClick={() => {
-          setLayerVisible(true);
-        }}
-      >
-        <div className="project-image" key={title}>
-          <img src={imageUrl} alt={imageAltText} width="100" height="100" />
-        </div>
-        <h2 className="project-text">{title}</h2>
+    // Ask about onClick placement on line 35
+    <div key={id} className="project-element">
+      <div className="project-image" key={title} onClick={openDetailsLayer}>
+        <img src={imageUrl} alt={imageAltText} width="100" height="100" />
       </div>
-      {/* </div> */}
+      <h2 className="project-text">{title}</h2>
       {layerVisible && (
-        <ElementDetailsLayer
-          element={{
-            name: title,
-            picture: imageUrl,
-            description: extendedContent,
-            link: <a href={`/projects?id=${id}`}>View Project</a>,
-          }}
-          onClose={closeDetailsLayer}
-        />
+        <React.Fragment>
+          <ElementDetailsLayer
+            element={{
+              name: title,
+              picture: imageUrl,
+              description: extendedContent,
+              link: <a href={`/projects?id=${id}`}>View Project</a>,
+            }}
+            onClose={closeDetailsLayer}
+          />
+        </React.Fragment>
       )}
     </div>
   );
