@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ElementDetailsLayer from "../common/elementDetailsLayer";
+import { Link } from "wouter";
 
 interface ProjectData {
   id: number;
@@ -8,6 +9,7 @@ interface ProjectData {
   imageUrl: string;
   imageAltText: string;
   showLayer: boolean;
+  type: "project" | "skill";
 }
 
 const ProjectElement = ({
@@ -17,6 +19,7 @@ const ProjectElement = ({
   imageUrl,
   imageAltText,
   showLayer,
+  type,
 }: ProjectData) => {
   const [layerVisible, setLayerVisible] = useState(showLayer);
 
@@ -28,10 +31,29 @@ const ProjectElement = ({
     setLayerVisible(false);
   };
 
+  const handleDivClick = () => {
+    if (!layerVisible) {
+      openDetailsLayer();
+    }
+  };
+
+  const handleButtonClick = () => {
+    closeDetailsLayer();
+  };
+
+  // Need to finish updating the logic below so that it works only with skills
+  const link = (
+    <Link
+      to={type === "project" ? `/skills?id=${id}` : `/skills?id=${id}`}
+      className="layer-link"
+    >
+      {type === "project" ? "➡️ See the skills ⬅️" : "➡️ See the skill ⬅️"}
+    </Link>
+  );
+
   return (
-    // Ask about onClick placement on line 35
-    <div key={id} className="project-element">
-      <div className="project-image" key={title} onClick={openDetailsLayer}>
+    <div key={id} className="project-element" onClick={handleDivClick}>
+      <div className="project-image" key={title}>
         <img src={imageUrl} alt={imageAltText} width="100" height="100" />
       </div>
       <h2 className="project-text">{title}</h2>
@@ -42,10 +64,11 @@ const ProjectElement = ({
               name: title,
               picture: imageUrl,
               description: extendedContent,
-              link: <a href={`/projects?id=${id}`}>View Project</a>,
+              link: link,
             }}
             onClose={closeDetailsLayer}
           />
+          <button onClick={handleButtonClick}>Close</button>
         </React.Fragment>
       )}
     </div>

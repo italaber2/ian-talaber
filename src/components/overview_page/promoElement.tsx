@@ -42,7 +42,7 @@ function PromoComponent({
       to={type === "project" ? `/projects?id=${id}` : `/skills?id=${id}`}
       className="layer-link"
     >
-      {type === "project" ? "See the project" : "See the skill"}
+      {type === "project" ? "➡️ See the project ⬅️" : "➡️ See the skill ⬅️"}
     </Link>
   );
 
