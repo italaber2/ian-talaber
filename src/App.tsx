@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "wouter";
-import NavBar from "./components/common/navBar";
 import PromoPage from "./components/overview_page/promoPage";
 import ProjectsPage from "./components/projects_page/projectsPage";
 import SkillsPage from "./components/skills_page/skillsPage";
@@ -8,7 +7,6 @@ import SkillsPage from "./components/skills_page/skillsPage";
 function App() {
   return (
     <div className="app">
-      <NavBar />
       <Switch>
         <Route path="/" component={PromoPage} />
         <Route path="/projects" component={ProjectsPage} />

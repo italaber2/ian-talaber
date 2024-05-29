@@ -49,6 +49,10 @@ body {
   min-width: 100%;
 }
 
+.header-component {
+  cursor: pointer
+}
+
 p {
   font-size: 1rem;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectListContainer from "./projectListContainer";
 import HeaderElement from "../common/headerElement";
+import FooterElement from "../common/footerElement";
 
 function ProjectsPage() {
   return (
@@ -10,6 +11,9 @@ function ProjectsPage() {
       </React.Fragment>
       <React.Fragment>
         <ProjectListContainer />
+      </React.Fragment>
+      <React.Fragment>
+        <FooterElement />
       </React.Fragment>
     </div>
   );
