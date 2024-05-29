@@ -3,10 +3,9 @@ export interface ChartOptions {
     type: "radar";
   };
   xaxis: {
-    categories: number[];
+    categories: string[];
   };
   fill: {
-    // opacity: number;
     colors: string[];
   };
   plotOptions: {
@@ -31,11 +30,19 @@ export const defaultOptions: ChartOptions = {
     type: "radar",
   },
   xaxis: {
-    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+    categories: [
+      "Cypress",
+      "JS/TS",
+      "React",
+      "CSS",
+      "Accessibility",
+      "CI/CD",
+      "HTML",
+      "Other",
+    ],
   },
   fill: {
-    // opacity: 0.5, // Set the opacity of the fill
-    colors: ["#FF4560"], // You can specify the colors here if needed
+    colors: ["#FF4560"],
   },
   plotOptions: {
     radar: {

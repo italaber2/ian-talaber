@@ -4,19 +4,19 @@ import { ApexOptions } from "apexcharts";
 export const defaultLineOptions: ApexOptions = {
   chart: {
     id: "basic-line",
-    type: "line", // explicitly specify the type as "line"
+    type: "line",
     toolbar: {
       show: true,
     },
   },
   xaxis: {
     categories: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
+      "Typescript",
+      "React",
+      "Cypress",
+      "CI/CD",
+      "Accessibility",
+      "Postman",
       "Jul",
       "Aug",
       "Sep",
