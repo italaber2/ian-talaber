@@ -27,7 +27,6 @@ const ProjectsPage = () => {
           imageUrl={project.imageUrl}
           imageAltText={project.imageAltText}
           showLayer={project.id.toString() === projectId}
-          type={"project"}
         />
       ))}
     </div>

@@ -9,7 +9,6 @@ interface ProjectData {
   imageUrl: string;
   imageAltText: string;
   showLayer: boolean;
-  type: "project" | "skill";
 }
 
 const ProjectElement = ({
@@ -19,7 +18,6 @@ const ProjectElement = ({
   imageUrl,
   imageAltText,
   showLayer,
-  type,
 }: ProjectData) => {
   const [layerVisible, setLayerVisible] = useState(showLayer);
 
@@ -41,13 +39,9 @@ const ProjectElement = ({
     closeDetailsLayer();
   };
 
-  // Need to finish updating the logic below so that it works only with skills
   const link = (
-    <Link
-      to={type === "project" ? `/skills?id=${id}` : `/skills?id=${id}`}
-      className="layer-link"
-    >
-      {type === "project" ? "➡️ See the skills ⬅️" : "➡️ See the skill ⬅️"}
+    <Link className="layer-link" to={`/skills?id=${id}`}>
+      ➡️ See the skills ⬅️
     </Link>
   );
 
