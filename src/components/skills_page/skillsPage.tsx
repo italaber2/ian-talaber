@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderElement from "../common/headerElement";
 import FooterElement from "../common/footerElement";
 import RadarChart from "./radarChart";
@@ -18,6 +18,7 @@ interface ButtonProps {
 }
 
 interface ButtonWrapperProps {
+  selectedProjectId: number | null;
   setProjectId: (id: number | null) => void;
   setLineGraphSelected: (selected: boolean) => void;
   isLineGraphSelected: boolean;
@@ -37,23 +38,17 @@ function Button({ projectName, isSelected, onClick }: ButtonProps) {
 }
 
 function ButtonWrapper({
+  selectedProjectId,
   setProjectId,
   setLineGraphSelected,
   isLineGraphSelected,
 }: ButtonWrapperProps) {
-  const [selectedButtonId, setSelectedButtonId] = useState<number | null>(null);
-
   const handleButtonClick = (projectId: number) => {
     setLineGraphSelected(false);
-    if (selectedButtonId === projectId) {
-      return;
-    }
-    setSelectedButtonId(projectId);
     setProjectId(projectId);
   };
 
   const handleLineGraphClick = () => {
-    setSelectedButtonId(null);
     setLineGraphSelected(true);
     setProjectId(null);
   };
@@ -64,7 +59,7 @@ function ButtonWrapper({
         <Button
           key={item.id}
           projectName={item.title}
-          isSelected={selectedButtonId === item.id}
+          isSelected={selectedProjectId === item.id}
           onClick={() => handleButtonClick(item.id)}
         />
       ))}
@@ -79,7 +74,11 @@ function ButtonWrapper({
 
 function SkillsPage() {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
-    null
+    () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const projectId = searchParams.get("id");
+      return projectId ? parseInt(projectId, 10) : null;
+    }
   );
   const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(false);
 
@@ -95,23 +94,18 @@ function SkillsPage() {
 
   return (
     <div className="skills">
-      <React.Fragment>
-        <HeaderElement headerId={3} />
-      </React.Fragment>
-      <React.Fragment>
-        <ButtonWrapper
-          setProjectId={setSelectedProjectId}
-          setLineGraphSelected={setLineGraphSelected}
-          isLineGraphSelected={isLineGraphSelected}
-        />
-        {seriesData.length > 0 && !isLineGraphSelected && (
-          <RadarChart seriesData={seriesData} />
-        )}
-        {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
-      </React.Fragment>
-      <React.Fragment>
-        <FooterElement />
-      </React.Fragment>
+      <HeaderElement headerId={3} />
+      <ButtonWrapper
+        selectedProjectId={selectedProjectId}
+        setProjectId={setSelectedProjectId}
+        setLineGraphSelected={setLineGraphSelected}
+        isLineGraphSelected={isLineGraphSelected}
+      />
+      {seriesData.length > 0 && !isLineGraphSelected && (
+        <RadarChart seriesData={seriesData} />
+      )}
+      {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
+      <FooterElement />
     </div>
   );
 }
