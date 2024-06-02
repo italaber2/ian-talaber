@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // import "./style/Reset.css";
 import "./style/App.css";
-import "./style/Nav.css";
 import "./style/Layer.css";
 import "./style/Promo.css";
+import "./style/Header.css";
 import "./style/Skills.css";
 import "./style/Project.css";
 

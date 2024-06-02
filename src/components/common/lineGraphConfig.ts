@@ -1,4 +1,4 @@
-// lineChartConfig.ts
+// lineGraphConfig.ts
 import { ApexOptions } from "apexcharts";
 
 export const defaultLineOptions: ApexOptions = {
@@ -11,22 +11,20 @@ export const defaultLineOptions: ApexOptions = {
   },
   xaxis: {
     categories: [
-      "Typescript",
-      "React",
-      "Cypress",
-      "CI/CD",
-      "Accessibility",
-      "Postman",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
+      "Q1 2022",
+      "Q2 2022",
+      "Q3 2022",
+      "Q4 2022",
+      "Q1 2023",
+      "Q2 2023",
+      "Q3 2023",
+      "Q4 2023",
+      "Q1 2024",
+      "Q2 2024",
     ],
   },
   stroke: {
-    curve: "smooth",
+    curve: "straight",
   },
   title: {
     text: "Monthly Sales Data",
@@ -38,8 +36,8 @@ export const defaultLineOptions: ApexOptions = {
     },
   },
   tooltip: {
-    enabled: true,
-    shared: true,
+    enabled: false,
+    shared: false,
     intersect: false,
   },
   markers: {
@@ -56,6 +54,6 @@ export const defaultLineOptions: ApexOptions = {
 export const defaultSeries = [
   {
     name: "Sales",
-    data: [30, 40, 35, 50, 49, 60, 70, 91, 125, 140, 155, 160],
+    data: [1, 1, 2, 3, 5, 8, 10, 10, 10, 10],
   },
 ];

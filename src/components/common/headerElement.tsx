@@ -1,6 +1,6 @@
 import React from "react";
 import jsonData from "../../data/headers.json";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export interface HeaderContent {
   id: number;
@@ -10,42 +10,46 @@ export interface HeaderContent {
 
 const getHeaderDataById = (id: number) => {
   const foundItem = jsonData.find((item) => item.id === id);
-
   return foundItem || null;
 };
 
-const HeaderComponent = ({ id, title, content }: HeaderContent) => (
-  <React.Fragment>
-    <div className="header-component">
-      <Link href="/" key={id}>
-        <h1>{title}</h1>
-      </Link>
-    </div>
-    <nav className="nav">
-      <ul>
-        <li>
-          <Link
-            data-testid="project-page-link"
-            href="/projects"
-            className="nav-link"
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
-            data-testid="skills-page-link"
-            href="/skills"
-            className="nav-link"
-          >
-            Skills
-          </Link>
-        </li>
-      </ul>
-      <p>{content}</p>
-    </nav>
-  </React.Fragment>
-);
+const HeaderComponent = ({ id, title, content }: HeaderContent) => {
+  const [location] = useLocation();
+
+  return (
+    <React.Fragment>
+      <div className="header-content">
+        <Link href="/" key={id}>
+          <h1 className="header-title">{title}</h1>
+        </Link>
+        <p className="header-paragraph">{content}</p>
+        <ul>
+          <li>
+            <Link
+              data-testid="project-page-link"
+              href="/projects"
+              className="header-link-project"
+              style={{ color: location === "/projects" ? "blue" : "white" }}
+            >
+              Projects
+            </Link>
+          </li>
+          •
+          <li>
+            <Link
+              data-testid="skills-page-link"
+              href="/skills"
+              className="header-link-skills"
+              style={{ color: location === "/skills" ? "blue" : "white" }}
+            >
+              Skills
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </React.Fragment>
+  );
+};
 
 interface HeaderElementProps {
   headerId: number;

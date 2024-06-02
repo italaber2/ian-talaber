@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HeaderElement from "../common/headerElement";
 import FooterElement from "../common/footerElement";
 import RadarChart from "./radarChart";
 import LineGraph from "./lineGraph";
 import jsonData from "../../data/projects.json";
+import { defaultSeries } from "../common/lineGraphConfig";
 
 interface ProjectData {
   id: number;
@@ -24,8 +25,7 @@ interface ButtonWrapperProps {
   isLineGraphSelected: boolean;
 }
 
-const defaultLineGraphData = [10, 20, 30, 40, 50]; // Example default data
-
+const defaultLineGraphData = defaultSeries[0].data; // Extracting the data array
 function Button({ projectName, isSelected, onClick }: ButtonProps) {
   return (
     <button
@@ -55,19 +55,19 @@ function ButtonWrapper({
 
   return (
     <div className="button-wrapper">
-      {jsonData.map((item: ProjectData) => (
+      {/* {jsonData.map((item: ProjectData) => (
         <Button
           key={item.id}
           projectName={item.title}
           isSelected={selectedProjectId === item.id}
           onClick={() => handleButtonClick(item.id)}
         />
-      ))}
-      <Button
-        projectName="Line Graph"
+      ))} */}
+      {/* <Button
+        projectName="Skills Over Time"
         isSelected={isLineGraphSelected}
         onClick={handleLineGraphClick}
-      />
+      /> */}
     </div>
   );
 }
@@ -80,15 +80,18 @@ function SkillsPage() {
       return projectId ? parseInt(projectId, 10) : null;
     }
   );
-  const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(false);
+  const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(true); // Default to true
 
   const selectedProject =
     selectedProjectId !== null
       ? jsonData.find((item: ProjectData) => item.id === selectedProjectId)
       : null;
 
-  const selectedProjectData = selectedProject ? selectedProject.data : [];
-  const seriesData = isLineGraphSelected
+  const selectedProjectData: number[] = selectedProject
+    ? selectedProject.data
+    : [];
+
+  const seriesData: number[] = isLineGraphSelected
     ? defaultLineGraphData
     : selectedProjectData;
 
