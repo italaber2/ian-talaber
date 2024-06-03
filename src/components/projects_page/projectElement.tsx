@@ -39,9 +39,10 @@ const ProjectElement = ({
     closeDetailsLayer();
   };
 
+  // Doesn't link to anything at the moment as radar graphs for the skills are disabled
   const link = (
     <Link className="layer-link" to={`/skills?id=${id}`}>
-      ➡️ See the skills ⬅️
+      {/* ➡️ See the skills ⬅️ */}
     </Link>
   );
 

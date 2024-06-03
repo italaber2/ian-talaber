@@ -1,12 +1,25 @@
 // lineGraphConfig.ts
 import { ApexOptions } from "apexcharts";
 
+const yAxisCategories = [
+  "",
+  "Noob 🆘",
+  "",
+  "Novice 😵‍💫",
+  "",
+  "Pretty alright 👍",
+  "",
+  "Pretty good 🥳",
+  "",
+  "Pretty amazing! 🔥",
+];
+
 export const defaultLineOptions: ApexOptions = {
   chart: {
     id: "basic-line",
     type: "line",
     toolbar: {
-      show: true,
+      show: false,
     },
   },
   xaxis: {
@@ -22,38 +35,76 @@ export const defaultLineOptions: ApexOptions = {
       "Q1 2024",
       "Q2 2024",
     ],
+    labels: {
+      style: {
+        colors: "#FFFFFF",
+        fontSize: "12px",
+      },
+      rotate: -45,
+      rotateAlways: true,
+    },
   },
   stroke: {
     curve: "straight",
   },
   title: {
-    text: "Monthly Sales Data",
-    align: "left",
-  },
-  yaxis: {
-    title: {
-      text: "Sales (in units)",
+    text: "Proficiency Over Time",
+    align: "center",
+    style: {
+      fontSize: "18px",
+      color: "#FFFFFF",
     },
   },
-  tooltip: {
-    enabled: false,
-    shared: false,
-    intersect: false,
+  yaxis: {
+    // title: {
+    //   text: "Proficiency Level",
+    //   style: {
+    //     fontSize: "15px",
+    //     color: "#FFFFFF",
+    //   },
+    // },
+    labels: {
+      style: {
+        colors: "#FFFFFF",
+        fontSize: "12px",
+      },
+      formatter: (value) => {
+        return yAxisCategories[value - 1];
+      },
+    },
   },
   markers: {
     size: 4,
-    colors: ["#FFA41B"],
-    strokeWidth: 2,
+    colors: ["#FFFFFF"],
+    strokeWidth: 0,
   },
   legend: {
-    position: "top",
-    horizontalAlign: "right",
+    show: true,
+    labels: {
+      colors: "#FF0000",
+    },
   },
 };
 
 export const defaultSeries = [
   {
-    name: "Sales",
-    data: [1, 1, 2, 3, 5, 8, 10, 10, 10, 10],
+    name: "Cypress",
+    data: [2, 4, 6, 8, 10, 8, 10, 10, 10, 10],
+  },
+  {
+    name: "Typescript",
+    data: [2, 3, 5, 8, 2, 2, 3, 5, 8, 4],
+  },
+  {
+    name: "React",
+    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
+  },
+  {
+    name: "Web accessibility",
+    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
+  },
+  {
+    name: "CI/CD",
+    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
   },
 ];

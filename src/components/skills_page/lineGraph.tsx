@@ -12,8 +12,8 @@ const LineGraph = ({ seriesData }: MyComponentProps) => {
   const [series, setSeries] = useState(defaultSeries);
 
   useEffect(() => {
-    setSeries([{ ...defaultSeries[0], data: seriesData }]);
-  }, [seriesData]);
+    setSeries(defaultSeries);
+  }, []);
 
   return (
     <div className="app">
