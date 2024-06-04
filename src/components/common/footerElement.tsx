@@ -3,6 +3,7 @@ import React from "react";
 const FooterComponent = () => (
   <React.Fragment>
     <div className="footer-component">
+      •
       <ul>
         <li>
           <a
@@ -15,8 +16,8 @@ const FooterComponent = () => (
             <img
               src="/github-mark-white.png"
               alt="github"
-              width="25"
-              height="25"
+              width="35"
+              height="35"
               style={{ cursor: "pointer" }}
             />
           </a>
@@ -32,8 +33,8 @@ const FooterComponent = () => (
             <img
               src="/linkedin-logo.png"
               alt="linkedin"
-              width="25"
-              height="25"
+              width="35"
+              height="35"
               style={{ cursor: "pointer" }}
             />
           </a>

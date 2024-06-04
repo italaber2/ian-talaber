@@ -1,6 +1,7 @@
 import React from "react";
 import jsonData from "../../data/headers.json";
 import { Link, useLocation } from "wouter";
+import { ReactComponent as Banner } from "./pageBanner.svg";
 
 export interface HeaderContent {
   id: number;
@@ -20,7 +21,7 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
     <React.Fragment>
       <div className="header-content">
         <Link href="/" key={id}>
-          <h1 className="header-title">{title}</h1>
+          <Banner />
         </Link>
         <p className="header-paragraph">{content}</p>
         <ul>
