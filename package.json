@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
     "@svgr/webpack": "^8.1.0",
     "@types/file-loader": "^5.0.4",
     "file-loader": "^6.2.0"
