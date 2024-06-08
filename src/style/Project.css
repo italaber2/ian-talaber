@@ -1,25 +1,25 @@
 .project-element {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   background-color: #344966;
   border: 2px solid #e6aace;
   border-radius: 0.5rem;
   padding: 9.6px;
   margin: 10px;
-  flex: 0 0 calc(44% - 0px);
+  /* flex: 0 0 calc(44% - 0px); */
   cursor: pointer;
 }
 
-.project-image {
+.project-feature {
   flex: 1;
 }
 
-.project-image img {
-  object-fit: cover;
-  object-position: 50% 50%;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
+.project-feature img {
+  /* object-fit: cover; */
+  /* object-position: 50% 50%; */
+  /* border-radius: 50%; */
+  height: 150px;
+  width: 300px;
 }
 
 .project-text {

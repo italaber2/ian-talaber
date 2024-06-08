@@ -8,6 +8,7 @@ interface ProjectData {
   content: string;
   extendedContent: string;
   imageUrl: string;
+  projectUrl: string;
   imageAltText: string;
 }
 
@@ -25,6 +26,7 @@ const ProjectsPage = () => {
           title={project.title}
           extendedContent={project.extendedContent}
           imageUrl={project.imageUrl}
+          projectUrl={project.projectUrl}
           imageAltText={project.imageAltText}
           showLayer={project.id.toString() === projectId}
         />
