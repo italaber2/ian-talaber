@@ -30,7 +30,7 @@
     "title": "Not xkcd",
     "content": "Miaou.",
     "extendedContent": "This website.",
-    "projectUrl": "https://not-xkcd.vercel.app/",
+    "projectUrl": "/redirect",
     "imageUrl": "/notXKCD.png",
     "imageAltText": "A grumpy cat.",
     "type": "project",
