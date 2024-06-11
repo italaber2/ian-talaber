@@ -48,7 +48,7 @@ export const defaultLineOptions: ApexOptions = {
     curve: "straight",
   },
   title: {
-    text: "Proficiency Over Time",
+    text: "Skill Proficiency Over Time (NOT ACTUAL DATA)",
     align: "center",
     style: {
       fontSize: "18px",
