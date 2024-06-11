@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.project-element img:hover {
+  opacity: 0.50;
+}
+
 .project-feature {
   flex: 1;
 }
