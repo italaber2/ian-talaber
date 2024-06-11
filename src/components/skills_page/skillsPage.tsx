@@ -25,7 +25,8 @@ interface ButtonWrapperProps {
   isLineGraphSelected: boolean;
 }
 
-const defaultLineGraphData = defaultSeries[0].data; // Extracting the data array
+const defaultLineGraphData = defaultSeries[0].data;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Button({ projectName, isSelected, onClick }: ButtonProps) {
   return (
     <button
@@ -43,11 +44,13 @@ function ButtonWrapper({
   setLineGraphSelected,
   isLineGraphSelected,
 }: ButtonWrapperProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleButtonClick = (projectId: number) => {
     setLineGraphSelected(false);
     setProjectId(projectId);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleLineGraphClick = () => {
     setLineGraphSelected(true);
     setProjectId(null);
@@ -97,7 +100,7 @@ function SkillsPage() {
 
   return (
     <div className="skills">
-      <HeaderElement headerId={3} />
+      <HeaderElement headerId={2} />
       <ButtonWrapper
         selectedProjectId={selectedProjectId}
         setProjectId={setSelectedProjectId}

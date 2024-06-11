@@ -12,6 +12,15 @@
   margin: 10px;
 }
 
+.header-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  color: blue;
+}
+
 ul {
   list-style-type: none;
   margin: 0;

@@ -17,33 +17,25 @@ const getHeaderDataById = (id: number) => {
 const HeaderComponent = ({ id, title, content }: HeaderContent) => {
   const [location] = useLocation();
 
+  const isSkillsPage = location === "/skills";
+  const buttonText = isSkillsPage ? "🚧 Projects 🚧" : "🤹 Skills 🤹";
+  const buttonLink = isSkillsPage ? "/" : "/skills";
+
   return (
     <React.Fragment>
       <div className="header-content">
-        <Link href="/" key={id}>
+        <Link href="/">
           <Banner />
         </Link>
         <p className="header-paragraph">{content}</p>
         <ul>
           <li>
             <Link
-              data-testid="project-page-link"
-              href="/projects"
-              className="header-link-project"
-              style={{ color: location === "/projects" ? "blue" : "white" }}
+              data-testid="dynamic-link"
+              href={buttonLink}
+              className="header-link"
             >
-              Projects
-            </Link>
-          </li>
-          •
-          <li>
-            <Link
-              data-testid="skills-page-link"
-              href="/skills"
-              className="header-link-skills"
-              style={{ color: location === "/skills" ? "blue" : "white" }}
-            >
-              Skills
+              {buttonText}
             </Link>
           </li>
         </ul>
