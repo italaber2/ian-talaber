@@ -16,6 +16,7 @@ const ProjectElement = ({
   imageUrl,
   projectUrl,
   imageAltText,
+  extendedContent,
 }: ProjectData) => {
   return (
     <div key={id} className="project-element">
@@ -28,6 +29,7 @@ const ProjectElement = ({
         >
           <img src={imageUrl} alt={imageAltText} />
         </a>
+        <p className="project-feature-description">{extendedContent}</p>
       </div>
     </div>
   );

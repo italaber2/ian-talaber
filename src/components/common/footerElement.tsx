@@ -3,28 +3,26 @@ import React from "react";
 const FooterComponent = () => (
   <React.Fragment>
     <div className="footer-component">
-      •
+      🏳️‍🌈
       <ul>
-        <li>
+        <li className="github-link">
           <a
-            data-testid="github-link"
             href="https://github.com/italaber2"
-            className="github-link"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
+              data-testid="github-link"
               src="/github-mark-white.png"
               alt="github"
-              width="35"
-              height="35"
+              width="30"
+              height="30"
               style={{ cursor: "pointer" }}
             />
           </a>
         </li>
-        <li>
+        <li data-testid="linkedin-link">
           <a
-            data-testid="linkedin-link"
             href="https://linkedin.com/in/italaber"
             className="linkedin-link"
             target="_blank"
@@ -33,8 +31,8 @@ const FooterComponent = () => (
             <img
               src="/linkedin-logo.png"
               alt="linkedin"
-              width="35"
-              height="35"
+              width="30"
+              height="30"
               style={{ cursor: "pointer" }}
             />
           </a>
