@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./style/App.css";
 import "./style/Layer.css";
-import "./style/Footer.css";
 import "./style/Header.css";
 import "./style/Skills.css";
 import "./style/Project.css";

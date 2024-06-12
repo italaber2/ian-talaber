@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HeaderElement from "../common/headerElement";
-import FooterElement from "../common/footerElement";
 import RadarChart from "./radarChart";
 import LineGraph from "./lineGraph";
 import jsonData from "../../data/projects.json";
@@ -111,7 +110,6 @@ function SkillsPage() {
         <RadarChart seriesData={seriesData} />
       )}
       {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
-      <FooterElement />
     </div>
   );
 }

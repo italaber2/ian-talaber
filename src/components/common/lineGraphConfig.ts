@@ -3,15 +3,15 @@ import { ApexOptions } from "apexcharts";
 
 const yAxisCategories = [
   "",
+  "Clueless 😵‍💫",
   "Noob 🆘",
-  "",
-  "Novice 😵‍💫",
-  "",
-  "Pretty alright 👍",
-  "",
-  "Pretty good 🥳",
-  "",
-  "Pretty amazing! 🔥",
+  "Novice 🫤",
+  "Acceptable 👍",
+  "Pretty alright 💡",
+  "Proficient 👏",
+  "Pretty good! 🥳",
+  "Expert 🔥",
+  "Zen master 🧘",
 ];
 
 export const defaultLineOptions: ApexOptions = {
@@ -38,7 +38,7 @@ export const defaultLineOptions: ApexOptions = {
     labels: {
       style: {
         colors: "#FFFFFF",
-        fontSize: "12px",
+        fontSize: "16px",
       },
       rotate: -45,
       rotateAlways: true,
@@ -46,6 +46,7 @@ export const defaultLineOptions: ApexOptions = {
   },
   stroke: {
     curve: "straight",
+    width: 3,
   },
   title: {
     text: "Skill Proficiency Over Time (NOT ACTUAL DATA)",
@@ -56,17 +57,10 @@ export const defaultLineOptions: ApexOptions = {
     },
   },
   yaxis: {
-    // title: {
-    //   text: "Proficiency Level",
-    //   style: {
-    //     fontSize: "15px",
-    //     color: "#FFFFFF",
-    //   },
-    // },
     labels: {
       style: {
         colors: "#FFFFFF",
-        fontSize: "12px",
+        fontSize: "16px",
       },
       formatter: (value) => {
         return yAxisCategories[value - 1];
@@ -74,7 +68,7 @@ export const defaultLineOptions: ApexOptions = {
     },
   },
   markers: {
-    size: 4,
+    size: 3,
     colors: ["#FFFFFF"],
     strokeWidth: 0,
   },
@@ -83,6 +77,7 @@ export const defaultLineOptions: ApexOptions = {
     labels: {
       colors: "#FF0000",
     },
+    fontSize: "15px",
   },
 };
 
