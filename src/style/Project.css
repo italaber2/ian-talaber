@@ -1,12 +1,15 @@
-/* .project-component {
-  max-width: 960px;
-} */
+:root {
+  --text-color: #ffffff;
+}
+
+.project-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .project-element {
   align-items: center;
-  /* background-color: #344966; */
-  /* border: 2px solid #e6aace; */
-  /* border-radius: 0.5rem; */
   padding: 9.6px;
   margin: 10px;
   cursor: pointer;
@@ -31,38 +34,11 @@
 
 .project-feature-description {
   max-width: 300px;
-  /* Constrain the width to a maximum of 300px */
   word-wrap: break-word;
-  /* Break long words to prevent overflow */
   margin: 0 auto;
-  /* Center the text horizontally if needed */
   text-align: left;
+  color: var(--text-color);
 }
-
-/* .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-} */
-
-/* .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: #000;
-  z-index: 1001;
-} */
 
 .gif-container {
   display: flex;

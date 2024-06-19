@@ -1,3 +1,7 @@
+:root {
+  --text-color: #ffffff;
+}
+
 .header-content {
   border-bottom: 1.5px dotted white;
   width: 98%;
@@ -6,6 +10,7 @@
 .header-title,
 .header-paragraph {
   padding: 0.5em 0;
+  color: var(--text-color);
 }
 
 .header-link-skills {
