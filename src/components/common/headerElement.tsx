@@ -38,7 +38,10 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
               {buttonText}
             </Link>
           </li>
-          ⚬
+
+          {/* Still need to figure out how to properly add the Github and LinkedIn links
+
+          {/* ⚬
           <li className="github-link">
             <a
               href="https://github.com/italaber2"
@@ -71,7 +74,7 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
                 style={{ cursor: "pointer" }}
               />
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </React.Fragment>
