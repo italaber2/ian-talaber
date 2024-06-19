@@ -1,7 +1,8 @@
 body {
   background-color: #2D3142;
-  /* color: #f0f4ef; */
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 160%;
   display: grid;
   place-items: center;
 }
@@ -51,16 +52,4 @@ body {
 
 .header-component {
   cursor: pointer
-}
-
-p {
-  font-size: 1.25rem;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
 }

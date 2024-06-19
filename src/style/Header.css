@@ -3,8 +3,15 @@
 }
 
 .header-content {
-  border-bottom: 1.5px dotted white;
+  border-bottom: 1.5px solid #BFC0C0;
   width: 98%;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
 }
 
 .header-title,
@@ -15,6 +22,8 @@
 
 .header-link-skills {
   margin: 10px;
+  text-align: center;
+  flex: 1;
 }
 
 .header-link {

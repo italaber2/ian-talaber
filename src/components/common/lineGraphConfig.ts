@@ -49,7 +49,7 @@ export const defaultLineOptions: ApexOptions = {
     width: 3,
   },
   title: {
-    text: "Skill Proficiency Over Time (NOT ACTUAL DATA)",
+    text: "Skill Proficiency Over Time",
     align: "center",
     style: {
       fontSize: "18px",
@@ -66,6 +66,8 @@ export const defaultLineOptions: ApexOptions = {
         return yAxisCategories[value - 1];
       },
     },
+    min: 2,
+    max: 10,
   },
   markers: {
     size: 3,
@@ -84,22 +86,22 @@ export const defaultLineOptions: ApexOptions = {
 export const defaultSeries = [
   {
     name: "Cypress",
-    data: [2, 4, 6, 8, 10, 8, 10, 10, 10, 10],
+    data: [5, 5, 6, 6, 6, 6, 7, 7, 7, 7],
   },
   {
     name: "Typescript",
-    data: [2, 3, 5, 8, 2, 2, 3, 5, 8, 4],
+    data: [3, 3, 3, 4, 4, 4, 4, 5, 5, 5],
   },
   {
     name: "React",
-    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
+    data: [2, 2, 3, 3, 3, 3, 3, 4, 4, 4],
   },
   {
     name: "Web accessibility",
-    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
+    data: [3, 3, 3, 3, 4, 4, 4, 5, 5, 5],
   },
   {
     name: "CI/CD",
-    data: [2, 8, 3, 2, 4, 5, 2, 2, 2, 7],
+    data: [3, 3, 3, 3, 4, 4, 4, 4, 4, 4],
   },
 ];
