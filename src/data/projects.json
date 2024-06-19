@@ -6,10 +6,7 @@
     "extendedContent": "A helpful website to answer the question, 'What day is it?' (or isn't).",
     "projectUrl": "https://what-day-is-it-nine.vercel.app",
     "imageUrl": "/whatDayIsIt.png",
-    "imageAltText": "A grumpy cat.",
-    "highlight": false,
-    "dateCreated": "2022-03-02T23:59:00.000Z",
-    "dateUpdated": "2022-03-02T23:59:00.000Z",
+    "imageAltText": "What day is it?",
     "data": [0, 6, 0, 2, 0, 0, 2, 0]
   },
   {
@@ -19,10 +16,7 @@
     "extendedContent": "A tool to visualise bookmarks from oldest to newest.",
     "projectUrl": "https://github.com/italaber2/saved-for-later",
     "imageUrl": "/savedForLater.png",
-    "imageAltText": "A grumpy cat.",
-    "highlight": false,
-    "dateCreated": "2022-03-02T23:59:00.000Z",
-    "dateUpdated": "2022-03-02T23:59:00.000Z",
+    "imageAltText": "Saved for later browser extension",
     "data": [0, 8, 6, 1, 0, 0, 1.5, 6]
   },
   {
@@ -32,11 +26,8 @@
     "extendedContent": "This website. Really.",
     "projectUrl": "/redirect",
     "imageUrl": "/notXKCD.png",
-    "imageAltText": "A grumpy cat.",
+    "imageAltText": "Personal website (this site)",
     "type": "project",
-    "highlight": true,
-    "dateCreated": "2022-03-02T23:59:00.000Z",
-    "dateUpdated": "2022-03-02T23:59:00.000Z",
     "data": [0, 7.5, 7.5, 2, 4, 0, 1, 3]
   },
   {
@@ -46,11 +37,8 @@
     "extendedContent": "A simple (and definitely not buggy) e-commerce page for Cypress testing.",
     "projectUrl": "https://goingshopping.vercel.app",
     "imageUrl": "/goingShopping.png",
-    "imageAltText": "A grumpy cat.",
+    "imageAltText": "Going shopping e-commerce site",
     "type": "project",
-    "highlight": false,
-    "dateCreated": "2022-03-02T23:59:00.000Z",
-    "dateUpdated": "2022-03-02T23:59:00.000Z",
     "data": [8, 8, 8, 2, 0, 0, 1, 4]
   }
 ]
