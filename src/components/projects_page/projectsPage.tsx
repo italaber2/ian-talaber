@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import ProjectListContainer from "./projectListContainer";
+import ProjectLinks from "./projectLinks";
 import HeaderElement from "../common/headerElement";
 import closeIcon from "../common/closeIcon.svg";
+import Travolta from "../common/travolta.gif";
 
 function ProjectsPage() {
   const [location] = useLocation();
@@ -26,19 +28,13 @@ function ProjectsPage() {
             <img src={closeIcon} alt="Close" />
           </button>
           <div className="gif-container">
-            <img
-              src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWhkOWg2ZjQ2dmcxMTVhOTZtZTk4eHB4cWZ6bDFsZzZvanA0YmI0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tvGOBZKNEX0ac/giphy.webp"
-              alt="Overlay GIF"
-            />
+            <img src={Travolta} alt="Overlay GIF" />
           </div>
         </div>
       )}
-      <React.Fragment>
-        <HeaderElement headerId={1} />
-      </React.Fragment>
-      <React.Fragment>
-        <ProjectListContainer />
-      </React.Fragment>
+      <HeaderElement headerId={1} />
+      <ProjectListContainer />
+      <ProjectLinks />
     </div>
   );
 }

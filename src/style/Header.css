@@ -1,9 +1,10 @@
 :root {
   --text-color: #ffffff;
+  --link-color: #FF6442;
 }
 
 .header-content {
-  border-bottom: 1.5px solid #BFC0C0;
+  border-bottom: 5px dotted var(--link-color);
   width: 98%;
 }
 
@@ -27,8 +28,9 @@
 }
 
 .header-link {
-  color: white;
-  text-decoration: none;
+  color: var(--link-color);
+  text-decoration: underline dotted;
+  text-underline-position: under;
 }
 
 .header-link:hover {

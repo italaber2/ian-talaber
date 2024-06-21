@@ -89,12 +89,12 @@ export const defaultSeries = [
     data: [5, 5, 6, 6, 6, 6, 7, 7, 7, 7],
   },
   {
-    name: "Typescript",
-    data: [3, 3, 3, 4, 4, 4, 4, 5, 5, 5],
+    name: "TypeScript",
+    data: [3, 3, 3, 4, 4, 4, 4, 5, 6, 6],
   },
   {
     name: "React",
-    data: [2, 2, 3, 3, 3, 3, 3, 4, 4, 4],
+    data: [2, 2, 2, 3, 3, 3, 3, 4, 5, 5],
   },
   {
     name: "Web accessibility",

@@ -37,6 +37,15 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
             >
               {buttonText}
             </Link>
+            <a
+              data-testid="cv-link"
+              href="/IanTalaberCV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header-link"
+            >
+              📜 CV
+            </a>
           </li>
 
           {/* Still need to figure out how to properly add the Github and LinkedIn links
