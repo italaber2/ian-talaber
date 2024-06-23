@@ -115,16 +115,18 @@ function SkillsPage() {
         setLineGraphSelected={setLineGraphSelected}
         isLineGraphSelected={isLineGraphSelected}
       />
-      {viewportWidth <= 666 ? (
-        <img src={rotatePhone} alt="Rotate Phone GIF" />
-      ) : (
-        <>
-          {seriesData.length > 0 && !isLineGraphSelected && (
-            <RadarChart seriesData={seriesData} />
-          )}
-          {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
-        </>
-      )}
+      <div className="skills-component">
+        {viewportWidth <= 666 ? (
+          <img src={rotatePhone} alt="Rotate Phone GIF" />
+        ) : (
+          <>
+            {seriesData.length > 0 && !isLineGraphSelected && (
+              <RadarChart seriesData={seriesData} />
+            )}
+            {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
+          </>
+        )}
+      </div>
     </div>
   );
 }

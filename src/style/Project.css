@@ -27,9 +27,19 @@
   width: 300px;
 }
 
+.project-feature-name {
+  max-width: 300px;
+  min-height: 40px;
+  font-size: larger;
+  word-wrap: break-word;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-color);
+}
+
 .project-feature-description {
   max-width: 300px;
-  min-height: 50px;
+  min-height: 85px;
   word-wrap: break-word;
   margin: 0 auto;
   text-align: left;
