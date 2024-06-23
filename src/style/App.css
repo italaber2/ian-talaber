@@ -15,41 +15,6 @@ body {
 .promo-component,
 .header-component,
 .project-component {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.promo,
-.skills,
-.projects {
-  max-width: 50vw;
-  min-width: 340px;
-}
-
-.container {
-  flex-direction: row;
-  width: 90vw;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.project-component {
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-width: 100%;
-  justify-content: space-between;
-}
-
-.promo-component {
-  flex-direction: row;
-  justify-content: center;
-  min-width: 100%;
-}
-
-.header-component {
-  cursor: pointer
 }

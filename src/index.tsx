@@ -6,6 +6,8 @@ import "./style/Layer.css";
 import "./style/Header.css";
 import "./style/Skills.css";
 import "./style/Project.css";
+import "./style/Overlay.css";
+import "./style/AdditionalLinks.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

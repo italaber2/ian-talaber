@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProjectLinks() {
+function AdditionalLinks() {
   return (
     <div className="links-component">
       <li className="github-link">
@@ -15,7 +15,6 @@ function ProjectLinks() {
             alt="github"
             width="23"
             height="23"
-            style={{ cursor: "pointer" }}
           />
         </a>
       </li>
@@ -26,17 +25,11 @@ function ProjectLinks() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src="/linkedin-logo.png"
-            alt="linkedin"
-            width="23"
-            height="23"
-            style={{ cursor: "pointer" }}
-          />
+          <img src="/linkedin-logo.png" alt="linkedin" width="23" height="23" />
         </a>
       </li>
     </div>
   );
 }
 
-export default ProjectLinks;
+export default AdditionalLinks;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import ProjectListContainer from "./projectListContainer";
-import ProjectLinks from "./projectLinks";
+import AdditionalLinks from "./additionalLinks";
 import HeaderElement from "../common/headerElement";
 import closeIcon from "../common/closeIcon.svg";
 import Travolta from "../common/travolta.gif";
@@ -34,7 +34,7 @@ function ProjectsPage() {
       )}
       <HeaderElement headerId={1} />
       <ProjectListContainer />
-      <ProjectLinks />
+      <AdditionalLinks />
     </div>
   );
 }

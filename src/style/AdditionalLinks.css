@@ -1,0 +1,4 @@
+.github-link:hover,
+.linkedin-link:hover {
+  filter: invert(100%);
+}
