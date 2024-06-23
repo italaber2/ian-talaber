@@ -1,8 +1,8 @@
 [
   {
-    "id": 3,
+    "id": 1,
     "title": "What Day Is It?",
-    "content": "Miaou.",
+    "content": "",
     "extendedContent": "A helpful website to answer the age old question, 'What day is it?'.",
     "projectUrl": "https://what-day-is-it-nine.vercel.app",
     "imageUrl": "/whatDayIsIt.png",
@@ -10,9 +10,9 @@
     "data": [0, 6, 0, 2, 0, 0, 2, 0]
   },
   {
-    "id": 4,
+    "id": 2,
     "title": "Saved For Later",
-    "content": "Miaou.",
+    "content": "",
     "extendedContent": "A tool to visualise bookmarks from oldest to newest with the ability to save or delete them.",
     "projectUrl": "https://github.com/italaber2/saved-for-later",
     "imageUrl": "/savedForLater.png",
@@ -20,25 +20,25 @@
     "data": [0, 8, 6, 1, 0, 0, 1.5, 6]
   },
   {
-    "id": 5,
-    "title": "This website",
-    "content": "Miaou.",
-    "extendedContent": "Really?",
-    "projectUrl": "/redirect",
-    "imageUrl": "/notXKCD.png",
-    "imageAltText": "Personal website (this site)",
-    "type": "project",
-    "data": [0, 7.5, 7.5, 2, 4, 0, 1, 3]
-  },
-  {
-    "id": 6,
+    "id": 3,
     "title": "Going Shopping",
-    "content": "Miaou.",
+    "content": "",
     "extendedContent": "A simple (and definitely not buggy) e-commerce site designed as a test automation sandbox.",
     "projectUrl": "https://goingshopping.vercel.app",
     "imageUrl": "/goingShopping.png",
     "imageAltText": "Going shopping e-commerce site",
     "type": "project",
     "data": [8, 8, 8, 2, 0, 0, 1, 4]
+  },
+  {
+    "id": 4,
+    "title": "This website",
+    "content": "",
+    "extendedContent": "Really.",
+    "projectUrl": "/redirect",
+    "imageUrl": "/notXKCD.png",
+    "imageAltText": "Personal website (this site)",
+    "type": "project",
+    "data": [0, 7.5, 7.5, 2, 4, 0, 1, 3]
   }
 ]
