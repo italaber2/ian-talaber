@@ -34,7 +34,7 @@
     "id": 6,
     "title": "Going Shopping",
     "content": "Miaou.",
-    "extendedContent": "A simple (and definitely not buggy) e-commerce site designed as an test automation sandbox.",
+    "extendedContent": "A simple (and definitely not buggy) e-commerce site designed as a test automation sandbox.",
     "projectUrl": "https://goingshopping.vercel.app",
     "imageUrl": "/goingShopping.png",
     "imageAltText": "Going shopping e-commerce site",
