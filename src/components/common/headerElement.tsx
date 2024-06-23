@@ -33,18 +33,19 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
             <Link
               data-testid="dynamic-link"
               href={buttonLink}
-              className="header-link"
+              className="button-style"
             >
               {buttonText}
             </Link>
+            •
             <a
               data-testid="cv-link"
               href="/IanTalaberCV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="header-link"
+              className="cv-button-style"
             >
-              📜 CV
+              📜 Resume
             </a>
           </li>
         </ul>

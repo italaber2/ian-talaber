@@ -8,11 +8,8 @@ body {
 }
 
 .app,
-.promo,
 .skills,
 .projects,
-.container,
-.promo-component,
 .header-component,
 .project-component {
   align-items: center;
