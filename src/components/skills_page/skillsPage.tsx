@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderElement from "../common/headerElement";
 import RadarChart from "./radarChart";
 import LineGraph from "./lineGraph";
 import jsonData from "../../data/projects.json";
 import { defaultSeries } from "../common/lineGraphConfig";
+import rotatePhone from "../common/rotatePhone.gif";
 
 interface ProjectData {
   id: number;
@@ -25,7 +26,7 @@ interface ButtonWrapperProps {
 }
 
 const defaultLineGraphData = defaultSeries[0].data;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 function Button({ projectName, isSelected, onClick }: ButtonProps) {
   return (
     <button
@@ -43,13 +44,11 @@ function ButtonWrapper({
   setLineGraphSelected,
   isLineGraphSelected,
 }: ButtonWrapperProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleButtonClick = (projectId: number) => {
     setLineGraphSelected(false);
     setProjectId(projectId);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleLineGraphClick = () => {
     setLineGraphSelected(true);
     setProjectId(null);
@@ -57,6 +56,7 @@ function ButtonWrapper({
 
   return (
     <div className="button-wrapper">
+      {/* Example buttons commented out for brevity */}
       {/* {jsonData.map((item: ProjectData) => (
         <Button
           key={item.id}
@@ -76,13 +76,22 @@ function ButtonWrapper({
 
 function SkillsPage() {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
-    () => {
-      const searchParams = new URLSearchParams(window.location.search);
-      const projectId = searchParams.get("id");
-      return projectId ? parseInt(projectId, 10) : null;
-    }
+    null
   );
-  const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(true); // Default to true
+  const [isLineGraphSelected, setLineGraphSelected] = useState<boolean>(true);
+  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const selectedProject =
     selectedProjectId !== null
@@ -106,10 +115,16 @@ function SkillsPage() {
         setLineGraphSelected={setLineGraphSelected}
         isLineGraphSelected={isLineGraphSelected}
       />
-      {seriesData.length > 0 && !isLineGraphSelected && (
-        <RadarChart seriesData={seriesData} />
+      {viewportWidth <= 666 ? (
+        <img src={rotatePhone} alt="Rotate Phone GIF" />
+      ) : (
+        <>
+          {seriesData.length > 0 && !isLineGraphSelected && (
+            <RadarChart seriesData={seriesData} />
+          )}
+          {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
+        </>
       )}
-      {isLineGraphSelected && <LineGraph seriesData={seriesData} />}
     </div>
   );
 }
