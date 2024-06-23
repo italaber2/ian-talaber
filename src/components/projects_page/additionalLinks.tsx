@@ -3,31 +3,27 @@ import React from "react";
 function AdditionalLinks() {
   return (
     <div className="links-component">
-      <li className="github-link">
+      <p className="links-title">Stalk Me! (Professionally)</p>
+      <div className="github-link">
         <a
           href="https://github.com/italaber2"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            data-testid="github-link"
-            src="/github-mark-white.png"
-            alt="github"
-            width="23"
-            height="23"
-          />
+          <img src="/github-mark-white.png" alt="github" />
         </a>
-      </li>
-      <li data-testid="linkedin-link">
+        <p className="links-text">For project updates</p>
+      </div>
+      <div className="linkedIn-link">
         <a
           href="https://linkedin.com/in/italaber"
-          className="linkedin-link"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/linkedin-logo.png" alt="linkedin" width="23" height="23" />
+          <img src="/linkedin-logo.png" alt="linkedin" />
         </a>
-      </li>
+        <p className="links-text">For professional updates</p>
+      </div>
     </div>
   );
 }

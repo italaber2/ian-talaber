@@ -37,7 +37,6 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
             >
               {buttonText}
             </Link>
-            •
             <a
               data-testid="cv-link"
               href="/IanTalaberCV.pdf"
