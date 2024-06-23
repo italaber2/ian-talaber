@@ -1,12 +1,9 @@
-/* Links component styling */
 .links-component {
   border-top: 3px dotted #ddd;
-  border-bottom: 5px dotted var(--link-color);
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
-  width: 300px;
-  max-width: 65vw;
+  width: 25vw;
   margin: 2em auto;
 }
 
@@ -20,7 +17,6 @@
 .linkedIn-link {
   display: flex;
   align-items: center;
-  margin: 1em 0 0 0;
 }
 
 .github-link:hover,
@@ -29,15 +25,15 @@
 }
 
 .links-text {
+  margin: 0.5em;
   color: white;
-  font-size: large;
+  font-size: medium;
   margin-left: 10px;
 }
 
 .github-link img,
 .linkedIn-link img {
   float: left;
-  margin: 0.5em 0;
   max-width: 35px;
   height: 35px;
 }

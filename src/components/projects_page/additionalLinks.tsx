@@ -17,6 +17,7 @@ function AdditionalLinks() {
       <div className="linkedIn-link">
         <a
           href="https://linkedin.com/in/italaber"
+          className="linkedin-link"
           target="_blank"
           rel="noopener noreferrer"
         >

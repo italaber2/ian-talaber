@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./style/App.css";
 import "./style/Header.css";
+import "./style/Footer.css";
 import "./style/Skills.css";
 import "./style/Project.css";
 import "./style/Overlay.css";

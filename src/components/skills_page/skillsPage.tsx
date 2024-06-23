@@ -5,6 +5,7 @@ import LineGraph from "./lineGraph";
 import jsonData from "../../data/projects.json";
 import { defaultSeries } from "../common/lineGraphConfig";
 import rotatePhone from "../common/rotatePhone.gif";
+import FooterElement from "../common/footerElement";
 
 interface ProjectData {
   id: number;
@@ -127,6 +128,7 @@ function SkillsPage() {
           </>
         )}
       </div>
+      <FooterElement />
     </div>
   );
 }

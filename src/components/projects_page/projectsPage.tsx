@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import ProjectListContainer from "./projectListContainer";
 import AdditionalLinks from "./additionalLinks";
 import HeaderElement from "../common/headerElement";
+import FooterElement from "../common/footerElement";
 import closeIcon from "../common/closeIcon.svg";
 import Travolta from "../common/travolta.gif";
 
@@ -35,6 +36,7 @@ function ProjectsPage() {
       <HeaderElement headerId={1} />
       <ProjectListContainer />
       <AdditionalLinks />
+      <FooterElement />
     </div>
   );
 }
