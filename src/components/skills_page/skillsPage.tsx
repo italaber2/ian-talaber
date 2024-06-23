@@ -116,7 +116,7 @@ function SkillsPage() {
         isLineGraphSelected={isLineGraphSelected}
       />
       <div className="skills-component">
-        {viewportWidth <= 666 ? (
+        {viewportWidth <= 606 ? (
           <img src={rotatePhone} alt="Rotate Phone GIF" />
         ) : (
           <>
