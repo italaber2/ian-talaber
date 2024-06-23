@@ -52,7 +52,7 @@ export const defaultLineOptions: ApexOptions = {
     text: "Skill Proficiency Over Time",
     align: "center",
     style: {
-      fontSize: "18px",
+      fontSize: "20px",
       color: "#FFFFFF",
     },
   },
@@ -77,9 +77,9 @@ export const defaultLineOptions: ApexOptions = {
   legend: {
     show: true,
     labels: {
-      colors: "#FF0000",
+      colors: "#FFFFFF",
     },
-    fontSize: "15px",
+    fontSize: "16px",
   },
 };
 
