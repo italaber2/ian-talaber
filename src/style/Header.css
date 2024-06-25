@@ -4,7 +4,6 @@
 }
 
 .header-content {
-  padding: 0.5em 0;
   border-bottom: 5px dotted var(--link-color);
   width: 98%;
 }
@@ -37,7 +36,7 @@
 ul {
   list-style-type: none;
   margin: 0px;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -51,6 +50,7 @@ a {
 .button-style,
 .cv-button-style {
   background-color: #F2CC8F;
+  color: black;
   padding: 1px 5px;
   border-radius: 10px;
   font-size: larger;
@@ -58,5 +58,4 @@ a {
   margin-right: 10px;
   margin-left: 10px;
   border: 1px solid var(--link-color);
-  /* Border style: 2px thick solid red */
 }
