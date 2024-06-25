@@ -4,7 +4,6 @@
 
 .footer-component {
   border-top: 5px dotted var(--link-color);
-  width: 98%;
 }
 
 .footer-component-text {
