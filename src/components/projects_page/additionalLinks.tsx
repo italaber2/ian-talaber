@@ -11,8 +11,8 @@ function AdditionalLinks() {
           rel="noopener noreferrer"
         >
           <img src="/github-mark-white.png" alt="github" />
+          <span className="links-text">For project updates</span>
         </a>
-        <p className="links-text">For project updates</p>
       </div>
       <div className="linkedIn-link">
         <a
@@ -22,8 +22,8 @@ function AdditionalLinks() {
           rel="noopener noreferrer"
         >
           <img src="/linkedin-logo.png" alt="linkedin" />
+          <span className="links-text">For professional updates</span>
         </a>
-        <p className="links-text">For professional updates</p>
       </div>
     </div>
   );
