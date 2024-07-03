@@ -17,6 +17,21 @@ function ProjectsPage() {
     }
   }, [location]);
 
+  useEffect(() => {
+    const handleKeyDown = (event: any) => {
+      if (event.key === "Escape") {
+        setShowOverlay(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   const closeOverlay = () => {
     setShowOverlay(false);
   };
