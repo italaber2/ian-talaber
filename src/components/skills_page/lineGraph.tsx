@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { defaultLineOptions, defaultSeries } from "../common/lineGraphConfig";
+import { defaultLineOptions, defaultSeries } from "./lineGraphConfig";
 
 interface MyComponentProps {
   seriesData: number[];

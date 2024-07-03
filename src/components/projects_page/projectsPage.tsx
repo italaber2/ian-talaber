@@ -26,7 +26,6 @@ function ProjectsPage() {
 
     document.addEventListener("keydown", handleKeyDown);
 
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
