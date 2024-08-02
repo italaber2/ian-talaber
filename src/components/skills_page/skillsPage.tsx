@@ -30,7 +30,10 @@ function SkillsPage() {
           <img src={rotatePhone} alt="Rotate Phone GIF" />
         ) : (
           <>
-            <LineGraph seriesData={defaultLineGraphData} />
+            <LineGraph
+              seriesData={defaultLineGraphData}
+              data-testid="line-graph"
+            />
           </>
         )}
       </div>

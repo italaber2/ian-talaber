@@ -25,7 +25,7 @@ const HeaderComponent = ({ id, title, content }: HeaderContent) => {
     <React.Fragment>
       <div className="header-content">
         <Link href="/">
-          <Banner className="header-banner" />
+          <Banner className="header-banner" data-testid="header-banner" />
         </Link>
         <p className="header-paragraph">{content}</p>
         <ul>
